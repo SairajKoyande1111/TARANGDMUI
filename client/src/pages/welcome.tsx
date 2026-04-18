@@ -254,39 +254,50 @@ export default function Welcome() {
           <span style={{ color: "#e49b1d" }}>{welcomeUI.buttonText || t.exploreMenu}</span>
         </button>
 
-        {/* Follow Our Socials label */}
-        <p className="text-xs font-normal tracking-widest" style={{ color: labelColor, marginTop: "28px" }}>
-          Follow Our Socials
-        </p>
+        {/* Card wrapping all three sections */}
+        <div
+          className="w-full flex flex-col items-center gap-4 px-4"
+          style={{
+            marginTop: "20px",
+            background: "#030101",
+            borderRadius: "20px",
+            padding: "20px 16px 16px",
+            boxShadow: "inset 0 0 0 2px #e49b1d, 0 0 0 2px #FFFFFF, 0 0 0 4px #030101",
+          }}
+        >
+          {/* Follow Our Socials */}
+          <p className="text-xs font-normal tracking-widest" style={{ color: "#e49b1d" }}>
+            Follow Our Socials
+          </p>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={() => handleSocialClick(links.instagram)}
+              className="transition-opacity hover:opacity-80"
+              data-testid="button-social-instagram"
+            >
+              <img src={instaImg} alt="Instagram" className="w-12 h-12 rounded-xl object-cover" />
+            </button>
+            <button
+              onClick={() => handleSocialClick(links.facebook)}
+              className="transition-opacity hover:opacity-80"
+              data-testid="button-social-facebook"
+            >
+              <img src={fbImg} alt="Facebook" className="w-12 h-12 rounded-xl object-cover" />
+            </button>
+            <button
+              onClick={() => handleSocialClick(links.youtube)}
+              className="transition-opacity hover:opacity-80"
+              data-testid="button-social-youtube"
+            >
+              <img src={ytImg} alt="YouTube" className="w-12 h-12 rounded-xl object-cover" />
+            </button>
+          </div>
 
-        {/* Social icons row */}
-        <div className="flex items-center gap-6">
-          <button
-            onClick={() => handleSocialClick(links.instagram)}
-            className="transition-opacity hover:opacity-80"
-            data-testid="button-social-instagram"
-          >
-            <img src={instaImg} alt="Instagram" className="w-12 h-12 rounded-xl object-cover" />
-          </button>
-          <button
-            onClick={() => handleSocialClick(links.facebook)}
-            className="transition-opacity hover:opacity-80"
-            data-testid="button-social-facebook"
-          >
-            <img src={fbImg} alt="Facebook" className="w-12 h-12 rounded-xl object-cover" />
-          </button>
-          <button
-            onClick={() => handleSocialClick(links.youtube)}
-            className="transition-opacity hover:opacity-80"
-            data-testid="button-social-youtube"
-          >
-            <img src={ytImg} alt="YouTube" className="w-12 h-12 rounded-xl object-cover" />
-          </button>
-        </div>
+          {/* Divider */}
+          <div style={{ width: "80%", height: "1px", background: "rgba(228,155,29,0.3)" }} />
 
-        {/* Click to Rate Us */}
-        <div className="flex flex-col items-center gap-2" style={{ marginTop: "20px" }}>
-          <p className="text-xs font-normal tracking-widest" style={{ color: labelColor }}>
+          {/* Click to Rate Us */}
+          <p className="text-xs font-normal tracking-widest" style={{ color: "#e49b1d" }}>
             Click To Rate Us
           </p>
           <div style={{ overflow: "hidden", height: "62px" }}>
@@ -302,58 +313,59 @@ export default function Welcome() {
               />
             </button>
           </div>
+
+          {/* Divider */}
+          <div style={{ width: "80%", height: "1px", background: "rgba(228,155,29,0.3)" }} />
+
+          {/* Connect With Us */}
+          <p className="text-xs font-normal tracking-widest" style={{ color: "#e49b1d" }}>
+            Connect With Us
+          </p>
+          <div className="flex items-start justify-center gap-4">
+            <button
+              className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
+              onClick={() => handleSocialClick(links.locate)}
+              data-testid="button-connect-locate"
+            >
+              <img src={mapsImg} alt="Google Maps" className="w-12 h-12 rounded-lg object-cover" />
+              <span className="text-xs font-medium" style={{ color: "#e49b1d" }}>LOCATE</span>
+            </button>
+            <button
+              className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
+              onClick={() => handleSocialClick(links.call)}
+              data-testid="button-connect-call"
+            >
+              <img src={callImg} alt="Call" className="w-12 h-12 rounded-full object-cover" />
+              <span className="text-xs font-medium" style={{ color: "#e49b1d" }}>CALL</span>
+            </button>
+            <button
+              className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
+              onClick={() => handleSocialClick(links.whatsapp)}
+              data-testid="button-connect-chat"
+            >
+              <img src={whatsappImg} alt="WhatsApp" className="w-12 h-12 rounded-xl object-cover" />
+              <span className="text-xs font-medium" style={{ color: "#e49b1d" }}>CHAT</span>
+            </button>
+            <button
+              className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
+              onClick={() => handleSocialClick(links.email)}
+              data-testid="button-connect-email"
+            >
+              <img src={mailImg} alt="Email" className="w-12 h-12 rounded-lg object-cover" />
+              <span className="text-xs font-medium" style={{ color: "#e49b1d" }}>EMAIL</span>
+            </button>
+          </div>
+
+          {/* Footer inside card */}
+          <p
+            className="cursor-pointer text-xs font-normal tracking-widest"
+            style={{ color: "#e49b1d", textTransform: "lowercase", opacity: 0.7 }}
+            onClick={() => handleSocialClick(links.website)}
+            data-testid="text-website-footer"
+          >
+            {links.website.replace(/^https?:\/\//, "")}
+          </p>
         </div>
-
-        {/* Connect With Us label */}
-        <p className="text-xs font-normal tracking-widest" style={{ color: labelColor, marginTop: "14px" }}>
-          Connect With Us
-        </p>
-
-        {/* Connect icons row */}
-        <div className="flex items-start justify-center gap-4">
-          <button
-            className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
-            onClick={() => handleSocialClick(links.locate)}
-            data-testid="button-connect-locate"
-          >
-            <img src={mapsImg} alt="Google Maps" className="w-12 h-12 rounded-lg object-cover" />
-            <span className="text-xs font-medium" style={{ color: labelColor }}>LOCATE</span>
-          </button>
-          <button
-            className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
-            onClick={() => handleSocialClick(links.call)}
-            data-testid="button-connect-call"
-          >
-            <img src={callImg} alt="Call" className="w-12 h-12 rounded-full object-cover" />
-            <span className="text-xs font-medium" style={{ color: labelColor }}>CALL</span>
-          </button>
-          <button
-            className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
-            onClick={() => handleSocialClick(links.whatsapp)}
-            data-testid="button-connect-chat"
-          >
-            <img src={whatsappImg} alt="WhatsApp" className="w-12 h-12 rounded-xl object-cover" />
-            <span className="text-xs font-medium" style={{ color: labelColor }}>CHAT</span>
-          </button>
-          <button
-            className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
-            onClick={() => handleSocialClick(links.email)}
-            data-testid="button-connect-email"
-          >
-            <img src={mailImg} alt="Email" className="w-12 h-12 rounded-lg object-cover" />
-            <span className="text-xs font-medium" style={{ color: labelColor }}>EMAIL</span>
-          </button>
-        </div>
-
-        {/* Footer */}
-        <p
-          className="cursor-pointer text-xs font-normal tracking-widest"
-          style={{ color: labelColor, textTransform: "lowercase", opacity: 0.7 }}
-          onClick={() => handleSocialClick(links.website)}
-          data-testid="text-website-footer"
-        >
-          {links.website.replace(/^https?:\/\//, "")}
-        </p>
 
       </div>
     </div>
