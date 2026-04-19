@@ -243,16 +243,16 @@
 /* Default = dark (current look). Light overrides applied below. */
 :root {
   --bb-bg:        #c4722a;
-  --bb-card:      #1A1408;
-  --bb-card-alt:  #1C1500;
-  --bb-gold:      #D4AF37;
-  --bb-gold-2:    #E6C55A;
+  --bb-card:      #030101;
+  --bb-card-alt:  #030101;
+  --bb-gold:      #E49B1D;
+  --bb-gold-2:    #C4722A;
   --bb-text:      #DCD4C8;
   --bb-text-dim:  rgba(220,212,200,0.55);
-  --bb-border:    rgba(212,175,55,0.25);
-  --bb-header:    #3D3100;
+  --bb-border:    rgba(228,155,29,0.25);
+  --bb-header:    #030101;
   --bb-search-bg: rgba(255,255,255,0.06);
-  --bb-search-br: rgba(212,175,55,0.3);
+  --bb-search-br: rgba(228,155,29,0.3);
   --bb-input-text:#E8D8B4;
 }
 
@@ -287,6 +287,15 @@
 
 [data-theme="light"] .bb-bg {
   background-image: none;
+  background-color: #FFFFFF;
+}
+
+.bb-header {
+  background-color: #030101;
+  background-image: none;
+}
+
+[data-theme="light"] .bb-header {
   background-color: #FFFFFF;
 }
 /* ── end theme variables ────────────────────────────────────── */

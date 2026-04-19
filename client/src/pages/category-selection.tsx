@@ -322,7 +322,7 @@ export default function CategorySelection() {
 
   return (
     <div className="bb-bg min-h-screen">
-      <header className="bb-bg sticky top-0 z-30 elegant-shadow">
+      <header className="bb-header sticky top-0 z-30 elegant-shadow">
         <div className="container mx-auto px-2 sm:px-4 py-2">
           <div className="grid grid-cols-3 items-center w-full">
             <div className="flex items-center space-x-2 sm:space-x-3">
@@ -339,10 +339,10 @@ export default function CategorySelection() {
             </div>
 
             <div className="flex justify-center items-center">
-              <img 
-                src={logoUrl} 
-                alt="Barrel Born Logo" 
-                style={{ width: "80px", height: "80px", objectFit: "contain", display: "block" }}
+              <img
+                src="/tarang-logo-text-nobg.png"
+                alt="Tarang Kitchen & Bar"
+                style={{ width: "120px", height: "50px", objectFit: "contain", display: "block" }}
                 data-testid="img-logo"
               />
             </div>

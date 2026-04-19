@@ -395,7 +395,7 @@ export default function MenuLanding() {
   return (
     <div className="bb-bg min-h-screen">
       <header
-        className="bb-bg sticky top-0 z-30 elegant-shadow"
+        className="bb-header sticky top-0 z-30 elegant-shadow"
       >
         <div className="container mx-auto px-2 sm:px-4 py-2">
           <div className="grid grid-cols-3 items-center w-full">
@@ -414,9 +414,9 @@ export default function MenuLanding() {
 
             <div className="flex justify-center items-center">
               <img
-                src={logoUrl}
-                alt="AT Digital Menu Logo"
-                style={{ width: "96px", height: "96px", objectFit: "contain", display: "block" }}
+                src="/tarang-logo-text-nobg.png"
+                alt="Tarang Kitchen & Bar"
+                style={{ width: "120px", height: "50px", objectFit: "contain", display: "block" }}
                 data-testid="img-logo"
               />
             </div>
@@ -466,9 +466,9 @@ export default function MenuLanding() {
             <motion.div
               className="relative w-full max-w-sm rounded-3xl overflow-hidden"
               style={{
-                background: isDark ? "linear-gradient(160deg, #1C1500 0%, #0F0C00 100%)" : "#FFFFFF",
-                border: isDark ? "1.5px solid #D4AF37" : "1.5px solid rgba(212,175,55,0.5)",
-                boxShadow: isDark ? "0 0 60px rgba(212,175,55,0.18), 0 24px 64px rgba(0,0,0,0.7)" : "0 0 40px rgba(212,175,55,0.12), 0 24px 64px rgba(0,0,0,0.15)",
+                background: isDark ? "#030101" : "#FFFFFF",
+                border: isDark ? "1.5px solid #E49B1D" : "1.5px solid rgba(228,155,29,0.5)",
+                boxShadow: isDark ? "0 0 60px rgba(228,155,29,0.18), 0 24px 64px rgba(0,0,0,0.7)" : "0 0 40px rgba(228,155,29,0.12), 0 24px 64px rgba(0,0,0,0.15)",
               }}
               initial={{ scale: 0.88, y: 40, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
@@ -478,14 +478,14 @@ export default function MenuLanding() {
               {/* Gold shimmer top bar */}
               <div
                 className="h-[3px] w-full"
-                style={{ background: "linear-gradient(90deg, transparent, #D4AF37, #F0CC60, #D4AF37, transparent)" }}
+                style={{ background: "linear-gradient(90deg, transparent, #E49B1D, #C4722A, #E49B1D, transparent)" }}
               />
 
               {/* Close button */}
               <button
                 onClick={handleSkip}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                style={{ background: isDark ? "rgba(212,175,55,0.12)" : "rgba(212,175,55,0.1)", color: "var(--bb-gold)", border: "1px solid var(--bb-search-br)" }}
+                style={{ background: isDark ? "rgba(228,155,29,0.12)" : "rgba(228,155,29,0.1)", color: "var(--bb-gold)", border: "1px solid var(--bb-search-br)" }}
                 data-testid="button-close-popup"
               >
                 <X className="w-4 h-4" />
@@ -494,17 +494,17 @@ export default function MenuLanding() {
               <div className="px-7 pt-6 pb-7 flex flex-col items-center">
                 {/* Logo */}
                 <img
-                  src={logoUrl}
-                  alt="AT Digital Menu"
+                  src="/tarang-logo-circle.png"
+                  alt="Tarang Kitchen & Bar"
                   className="mb-1"
-                  style={{ filter: "drop-shadow(0 0 12px rgba(212,175,55,0.35))", width: "208px", height: "208px", objectFit: "contain" }}
+                  style={{ filter: "drop-shadow(0 0 12px rgba(228,155,29,0.5))", width: "150px", height: "150px", objectFit: "contain", borderRadius: "50%" }}
                 />
 
                 {/* Ornamental divider */}
                 <div className="flex items-center gap-3 w-full mb-4">
-                  <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, transparent, #D4AF37)" }} />
+                  <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, transparent, #E49B1D)" }} />
                   <span className="text-[10px] tracking-[0.3em] font-light" style={{ color: "var(--bb-gold)" }}>WELCOME</span>
-                  <div className="flex-1 h-px" style={{ background: "linear-gradient(to left, transparent, #D4AF37)" }} />
+                  <div className="flex-1 h-px" style={{ background: "linear-gradient(to left, transparent, #E49B1D)" }} />
                 </div>
 
                 {/* Headline */}
@@ -583,10 +583,10 @@ export default function MenuLanding() {
                     disabled={isSubmitting || customerName.length === 0 || customerPhone.length !== 10}
                     className="w-full h-12 rounded-full font-bold tracking-widest text-sm transition-all active:scale-95 disabled:opacity-40 mt-2"
                     style={{
-                      background: "linear-gradient(90deg, #D4AF37, #E6C55A)",
-                      color: "#1C1500",
+                      background: "linear-gradient(90deg, #E49B1D, #C4722A)",
+                      color: "#030101",
                       letterSpacing: "0.15em",
-                      boxShadow: "0 4px 20px rgba(212,175,55,0.35)",
+                      boxShadow: "0 4px 20px rgba(228,155,29,0.35)",
                     }}
                     data-testid="button-submit-customer"
                   >
@@ -609,7 +609,7 @@ export default function MenuLanding() {
               {/* Gold shimmer bottom bar */}
               <div
                 className="h-[2px] w-full"
-                style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }}
+                style={{ background: "linear-gradient(90deg, transparent, #E49B1D, transparent)" }}
               />
             </motion.div>
           </motion.div>
