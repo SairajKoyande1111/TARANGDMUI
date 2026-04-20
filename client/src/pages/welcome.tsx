@@ -235,27 +235,36 @@ export default function Welcome() {
           onClick={handleExploreMenu}
           className="w-full max-w-xs py-4 font-semibold rounded-full transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
           style={{
-            background: "#c4722a",
-            border: "none",
-            color: "#FFFFFF",
+            background: "#FFFFFF",
+            border: "1.5px solid #030101",
+            color: "#030101",
             marginTop: "-10px",
-            fontSize: "21px",
+            fontSize: "18px",
           }}
           data-testid="button-explore-menu"
         >
           <img
             src={spoonForkImg}
             alt=""
-            className="w-9 h-9 object-contain"
+            className="w-8 h-8 object-contain"
             style={{
-              filter: "brightness(0) invert(1)",
+              filter: "brightness(0) saturate(100%)",
             }}
           />
-          <span style={{ color: "#FFFFFF" }}>{welcomeUI.buttonText || t.exploreMenu}</span>
+          <span style={{ color: "#030101" }}>{welcomeUI.buttonText || t.exploreMenu}</span>
         </button>
 
-        {/* Follow Our Socials */}
-        <div className="w-full max-w-xs flex flex-col items-center gap-4" style={{ marginTop: "20px" }}>
+        {/* Follow Our Socials — card */}
+        <div
+          className="w-full max-w-xs flex flex-col items-center gap-4"
+          style={{
+            marginTop: "20px",
+            background: "#FFFFFF",
+            borderRadius: "20px",
+            border: "1.5px solid #030101",
+            padding: "20px 16px 16px",
+          }}
+        >
           <p className="text-xs font-normal tracking-widest" style={{ color: "#030101" }}>
             Follow Our Socials
           </p>
