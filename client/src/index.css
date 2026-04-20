@@ -293,13 +293,13 @@
 /* Welcome page — button */
 .btn-explore {
   background: #FFFFFF;
-  border: 3px solid #030101;
+  border: 5px solid #030101;
   color: #030101;
   font-size: 18px;
 }
 [data-theme="light"] .btn-explore {
   background: #030101;
-  border: 3px solid #c4722a;
+  border: 5px solid #c4722a;
   color: #FFFFFF;
 }
 .btn-explore .btn-icon {
@@ -313,12 +313,12 @@
 .social-card {
   background: #FFFFFF;
   border-radius: 20px;
-  border: 3px solid #030101;
+  border: 5px solid #030101;
   padding: 20px 16px 16px;
 }
 [data-theme="light"] .social-card {
   background: #030101;
-  border: 3px solid #c4722a;
+  border: 5px solid #c4722a;
 }
 .social-card-label {
   color: #030101;
