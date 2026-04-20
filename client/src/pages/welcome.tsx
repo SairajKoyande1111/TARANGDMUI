@@ -235,11 +235,11 @@ export default function Welcome() {
           onClick={handleExploreMenu}
           className="w-full max-w-xs py-4 font-semibold rounded-full transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
           style={{
-            background: "#030101",
+            background: "#FFFFFF",
             border: "none",
-            color: "#e49b1d",
+            color: "#030101",
             marginTop: "-10px",
-            boxShadow: "inset 0 0 0 2px #e49b1d, 0 0 0 2px #e49b1d, 0 0 0 4px #030101",
+            boxShadow: "inset 0 0 0 2px #030101, 0 0 0 2px #030101, 0 0 0 4px #FFFFFF",
             fontSize: "17px",
           }}
           data-testid="button-explore-menu"
@@ -249,10 +249,10 @@ export default function Welcome() {
             alt=""
             className="w-7 h-7 object-contain"
             style={{
-              filter: "brightness(0) saturate(100%) invert(65%) sepia(60%) saturate(600%) hue-rotate(5deg) brightness(100%) contrast(95%)",
+              filter: "brightness(0) saturate(100%)",
             }}
           />
-          <span style={{ color: "#e49b1d" }}>{welcomeUI.buttonText || t.exploreMenu}</span>
+          <span style={{ color: "#030101" }}>{welcomeUI.buttonText || t.exploreMenu}</span>
         </button>
 
         {/* Card wrapping all three sections */}
@@ -260,14 +260,14 @@ export default function Welcome() {
           className="w-full max-w-xs flex flex-col items-center gap-4"
           style={{
             marginTop: "20px",
-            background: "#030101",
+            background: "#FFFFFF",
             borderRadius: "20px",
             padding: "20px 16px 16px",
-            boxShadow: "inset 0 0 0 2px #e49b1d, 0 0 0 2px #e49b1d, 0 0 0 4px #030101",
+            boxShadow: "inset 0 0 0 2px #030101, 0 0 0 2px #030101, 0 0 0 4px #FFFFFF",
           }}
         >
           {/* Follow Our Socials */}
-          <p className="text-xs font-normal tracking-widest" style={{ color: "#e49b1d" }}>
+          <p className="text-xs font-normal tracking-widest" style={{ color: "#030101" }}>
             Follow Our Socials
           </p>
           <div className="flex items-center gap-6">
@@ -295,10 +295,10 @@ export default function Welcome() {
           </div>
 
           {/* Divider */}
-          <div style={{ width: "80%", height: "1px", background: "rgba(228,155,29,0.3)" }} />
+          <div style={{ width: "80%", height: "1px", background: "rgba(3,1,1,0.2)" }} />
 
           {/* Click to Rate Us */}
-          <p className="text-xs font-normal tracking-widest" style={{ color: "#e49b1d" }}>
+          <p className="text-xs font-normal tracking-widest" style={{ color: "#030101" }}>
             Click To Rate Us
           </p>
           <div style={{ overflow: "hidden", height: "62px" }}>
@@ -316,10 +316,10 @@ export default function Welcome() {
           </div>
 
           {/* Divider */}
-          <div style={{ width: "80%", height: "1px", background: "rgba(228,155,29,0.3)" }} />
+          <div style={{ width: "80%", height: "1px", background: "rgba(3,1,1,0.2)" }} />
 
           {/* Connect With Us */}
-          <p className="text-xs font-normal tracking-widest" style={{ color: "#e49b1d" }}>
+          <p className="text-xs font-normal tracking-widest" style={{ color: "#030101" }}>
             Connect With Us
           </p>
           <div className="flex items-start justify-center gap-4">
@@ -329,7 +329,7 @@ export default function Welcome() {
               data-testid="button-connect-locate"
             >
               <img src={mapsImg} alt="Google Maps" className="w-12 h-12 rounded-lg object-cover" />
-              <span className="text-xs font-medium" style={{ color: "#e49b1d" }}>LOCATE</span>
+              <span className="text-xs font-medium" style={{ color: "#030101" }}>LOCATE</span>
             </button>
             <button
               className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
@@ -337,7 +337,7 @@ export default function Welcome() {
               data-testid="button-connect-call"
             >
               <img src={callImg} alt="Call" className="w-12 h-12 rounded-full object-cover" />
-              <span className="text-xs font-medium" style={{ color: "#e49b1d" }}>CALL</span>
+              <span className="text-xs font-medium" style={{ color: "#030101" }}>CALL</span>
             </button>
             <button
               className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
@@ -345,7 +345,7 @@ export default function Welcome() {
               data-testid="button-connect-chat"
             >
               <img src={whatsappImg} alt="WhatsApp" className="w-12 h-12 rounded-xl object-cover" />
-              <span className="text-xs font-medium" style={{ color: "#e49b1d" }}>CHAT</span>
+              <span className="text-xs font-medium" style={{ color: "#030101" }}>CHAT</span>
             </button>
             <button
               className="flex flex-col items-center gap-0.5 transition-opacity hover:opacity-80"
@@ -353,14 +353,14 @@ export default function Welcome() {
               data-testid="button-connect-email"
             >
               <img src={mailImg} alt="Email" className="w-12 h-12 rounded-lg object-cover" />
-              <span className="text-xs font-medium" style={{ color: "#e49b1d" }}>EMAIL</span>
+              <span className="text-xs font-medium" style={{ color: "#030101" }}>EMAIL</span>
             </button>
           </div>
 
           {/* Footer inside card */}
           <p
             className="cursor-pointer text-xs font-normal tracking-widest"
-            style={{ color: "#e49b1d", textTransform: "lowercase", opacity: 0.7 }}
+            style={{ color: "#030101", textTransform: "lowercase", opacity: 0.6 }}
             onClick={() => handleSocialClick(links.website)}
             data-testid="text-website-footer"
           >
