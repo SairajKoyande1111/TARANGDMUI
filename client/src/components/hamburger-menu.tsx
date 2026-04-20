@@ -80,8 +80,8 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
         className="relative w-full sm:max-w-sm mx-0 sm:mx-4 rounded-t-3xl sm:rounded-3xl overflow-hidden"
         style={{
           background: isDark ? "linear-gradient(160deg, #1C1500 0%, #0F0C00 100%)" : "#FFFFFF",
-          border: isDark ? "1.5px solid rgba(212,175,55,0.4)" : "1.5px solid rgba(212,175,55,0.5)",
-          boxShadow: isDark ? "0 0 60px rgba(212,175,55,0.12), 0 24px 64px rgba(0,0,0,0.7)" : "0 0 40px rgba(212,175,55,0.12), 0 24px 64px rgba(0,0,0,0.15)",
+          border: isDark ? "1.5px solid rgba(228,155,29,0.4)" : "1.5px solid rgba(228,155,29,0.5)",
+          boxShadow: isDark ? "0 0 60px rgba(228,155,29,0.12), 0 24px 64px rgba(0,0,0,0.7)" : "0 0 40px rgba(228,155,29,0.12), 0 24px 64px rgba(0,0,0,0.15)",
           maxHeight: "92dvh",
           overflowY: "auto",
         }}
@@ -91,7 +91,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
         transition={{ type: "spring", damping: 26, stiffness: 300 }}
       >
         {/* Gold shimmer top bar */}
-        <div className="h-[3px] w-full" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, #F0CC60, #D4AF37, transparent)" }} />
+        <div className="h-[3px] w-full" style={{ background: "linear-gradient(90deg, transparent, #E49B1D, #F0CC60, #E49B1D, transparent)" }} />
 
         {!confirmed ? (
           <div className="p-5 pb-8">
@@ -99,7 +99,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
             <button
               onClick={onClose}
               className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center"
-              style={{ background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.25)", color: "#D4AF37" }}
+              style={{ background: "rgba(228,155,29,0.1)", border: "1px solid rgba(228,155,29,0.25)", color: "#E49B1D" }}
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -108,10 +108,10 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
             <div className="flex items-center gap-3 mb-5">
               <img src={reservationImg} alt="Reservation" className="w-12 h-12 object-contain flex-shrink-0" />
               <div>
-                <p className="text-[10px] tracking-[0.25em] uppercase font-semibold mb-0.5" style={{ color: "rgba(212,175,55,0.6)", fontFamily: "'DM Sans', sans-serif" }}>
+                <p className="text-[10px] tracking-[0.25em] uppercase font-semibold mb-0.5" style={{ color: "rgba(228,155,29,0.6)", fontFamily: "'DM Sans', sans-serif" }}>
                   Make a Reservation
                 </p>
-                <h3 className="text-lg font-black leading-tight" style={{ color: "#D4AF37", fontFamily: "'Cormorant Garamond', serif" }}>
+                <h3 className="text-lg font-black leading-tight" style={{ color: "#E49B1D", fontFamily: "'Cormorant Garamond', serif" }}>
                   Book Your Table
                 </h3>
               </div>
@@ -123,14 +123,14 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                 <label className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: isDark ? "#B8986A" : "#8B6200" }}>
                   Your Name *
                 </label>
-                <div className="flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(212,175,55,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
+                <div className="flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(228,155,29,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
                   <input
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your name"
                     required
                     className="w-full bg-transparent outline-none text-sm font-light"
-                    style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", caretColor: "#D4AF37" }}
+                    style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", caretColor: "#E49B1D" }}
                     data-testid="input-reservation-name"
                   />
                 </div>
@@ -141,7 +141,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                 <label className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: isDark ? "#B8986A" : "#8B6200" }}>
                   Contact Number *
                 </label>
-                <div className="flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(212,175,55,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
+                <div className="flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(228,155,29,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
                   <input
                     value={phone}
                     onChange={(e) => setPhone(e.target.value.replace(/\D/, ""))}
@@ -150,7 +150,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                     inputMode="numeric"
                     required
                     className="w-full bg-transparent outline-none text-sm font-light"
-                    style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", caretColor: "#D4AF37" }}
+                    style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", caretColor: "#E49B1D" }}
                     data-testid="input-reservation-phone"
                   />
                 </div>
@@ -162,7 +162,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                   <label className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: isDark ? "#B8986A" : "#8B6200" }}>
                     Date *
                   </label>
-                  <div className="flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(212,175,55,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
+                  <div className="flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(228,155,29,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
                     <input
                       type="date"
                       value={date}
@@ -170,7 +170,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                       required
                       min={new Date().toISOString().split("T")[0]}
                       className="w-full bg-transparent outline-none text-sm font-light"
-                      style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", caretColor: "#D4AF37", colorScheme: isDark ? "dark" : "light" }}
+                      style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", caretColor: "#E49B1D", colorScheme: isDark ? "dark" : "light" }}
                       data-testid="input-reservation-date"
                     />
                   </div>
@@ -179,8 +179,8 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                   <label className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: isDark ? "#B8986A" : "#8B6200" }}>
                     Guests *
                   </label>
-                  <div className="relative flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(212,175,55,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
-                    <Users className="w-3.5 h-3.5 mr-2 flex-shrink-0" style={{ color: isDark ? "rgba(212,175,55,0.5)" : "#8B6200" }} />
+                  <div className="relative flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(228,155,29,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
+                    <Users className="w-3.5 h-3.5 mr-2 flex-shrink-0" style={{ color: isDark ? "rgba(228,155,29,0.5)" : "#8B6200" }} />
                     <select
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
@@ -192,7 +192,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                         <option key={n} value={String(n)} style={{ background: isDark ? "#1C1500" : "#FFFFFF", color: isDark ? "#E8D8B4" : "#1a1a1a" }}>{n} {n === 1 ? "Guest" : "Guests"}</option>
                       ))}
                     </select>
-                    <ChevronDown className="w-3.5 h-3.5 absolute right-3 pointer-events-none" style={{ color: isDark ? "rgba(212,175,55,0.5)" : "#8B6200" }} />
+                    <ChevronDown className="w-3.5 h-3.5 absolute right-3 pointer-events-none" style={{ color: isDark ? "rgba(228,155,29,0.5)" : "#8B6200" }} />
                   </div>
                 </div>
               </div>
@@ -202,7 +202,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                 <label className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: isDark ? "#B8986A" : "#8B6200" }}>
                   Time Slot *
                 </label>
-                <div className="relative flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(212,175,55,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
+                <div className="relative flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(228,155,29,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
                   <select
                     value={timeSlot}
                     onChange={(e) => setTimeSlot(e.target.value)}
@@ -216,7 +216,7 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                       <option key={slot} value={slot} style={{ background: isDark ? "#1C1500" : "#FFFFFF", color: isDark ? "#E8D8B4" : "#1a1a1a" }}>{slot}</option>
                     ))}
                   </select>
-                  <ChevronDown className="w-3.5 h-3.5 absolute right-3 pointer-events-none" style={{ color: isDark ? "rgba(212,175,55,0.5)" : "#8B6200" }} />
+                  <ChevronDown className="w-3.5 h-3.5 absolute right-3 pointer-events-none" style={{ color: isDark ? "rgba(228,155,29,0.5)" : "#8B6200" }} />
                 </div>
               </div>
 
@@ -225,13 +225,13 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                 <label className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: isDark ? "#B8986A" : "#8B6200" }}>
                   Occasion <span style={{ color: isDark ? "rgba(180,160,100,0.5)" : "rgba(0,0,0,0.35)" }}>(Optional)</span>
                 </label>
-                <div className="flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(212,175,55,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
+                <div className="flex items-center rounded-xl px-4 h-11" style={{ background: isDark ? "rgba(228,155,29,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.3)" : "1px solid rgba(0,0,0,0.15)" }}>
                   <input
                     value={occasion}
                     onChange={(e) => setOccasion(e.target.value)}
                     placeholder="Birthday, Anniversary, Business..."
                     className="w-full bg-transparent outline-none text-sm font-light"
-                    style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", caretColor: "#D4AF37" }}
+                    style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", caretColor: "#E49B1D" }}
                     data-testid="input-reservation-occasion"
                   />
                 </div>
@@ -243,10 +243,10 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                 disabled={reservationMutation.isPending || !name || !phone || !date || !timeSlot}
                 className="w-full h-12 rounded-full font-bold tracking-widest text-sm transition-all active:scale-95 disabled:opacity-40 mt-2"
                 style={{
-                  background: "linear-gradient(90deg, #D4AF37, #E6C55A)",
+                  background: "linear-gradient(90deg, #E49B1D, #E6C55A)",
                   color: "#1C1500",
                   letterSpacing: "0.15em",
-                  boxShadow: "0 4px 20px rgba(212,175,55,0.3)",
+                  boxShadow: "0 4px 20px rgba(228,155,29,0.3)",
                 }}
                 data-testid="button-confirm-reservation"
               >
@@ -265,14 +265,14 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
             />
             <h3
               className="text-2xl font-black mt-2"
-              style={{ color: "#D4AF37", fontFamily: "'Cormorant Garamond', serif" }}
+              style={{ color: "#E49B1D", fontFamily: "'Cormorant Garamond', serif" }}
             >
               Reservation Confirmed!
             </h3>
             <p className="text-sm mt-2 font-light" style={{ color: isDark ? "rgba(220,212,200,0.7)" : "rgba(0,0,0,0.6)", fontFamily: "'DM Sans', sans-serif" }}>
               We're looking forward to hosting you, <span style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", fontWeight: 600 }}>{name}</span>.
             </p>
-            <div className="w-full mt-5 rounded-2xl p-4 space-y-2" style={{ background: "rgba(212,175,55,0.07)", border: "1px solid rgba(212,175,55,0.2)" }}>
+            <div className="w-full mt-5 rounded-2xl p-4 space-y-2" style={{ background: "rgba(228,155,29,0.07)", border: "1px solid rgba(228,155,29,0.2)" }}>
               {[
                 { label: "Date", value: new Date(date).toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" }) },
                 { label: "Time", value: timeSlot },
@@ -280,25 +280,25 @@ function ReservationModal({ onClose }: { onClose: () => void }) {
                 ...(occasion ? [{ label: "Occasion", value: occasion }] : []),
               ].map((row) => (
                 <div key={row.label} className="flex justify-between items-center">
-                  <span className="text-[11px] uppercase tracking-widest" style={{ color: "rgba(212,175,55,0.5)", fontFamily: "'DM Sans', sans-serif" }}>{row.label}</span>
+                  <span className="text-[11px] uppercase tracking-widest" style={{ color: "rgba(228,155,29,0.5)", fontFamily: "'DM Sans', sans-serif" }}>{row.label}</span>
                   <span className="text-[13px] font-semibold" style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", fontFamily: "'DM Sans', sans-serif" }}>{row.value}</span>
                 </div>
               ))}
             </div>
             <p className="text-[10px] mt-4" style={{ color: isDark ? "rgba(220,212,200,0.4)" : "rgba(0,0,0,0.4)", fontFamily: "'DM Sans', sans-serif" }}>
-              Our team will contact you on <span style={{ color: "#D4AF37" }}>{phone}</span> to confirm.
+              Our team will contact you on <span style={{ color: "#E49B1D" }}>{phone}</span> to confirm.
             </p>
             <button
               onClick={onClose}
               className="mt-5 px-8 py-2.5 rounded-full font-bold text-sm tracking-widest uppercase transition-all active:scale-95"
-              style={{ background: "linear-gradient(90deg, #D4AF37, #E6C55A)", color: "#1C1500" }}
+              style={{ background: "linear-gradient(90deg, #E49B1D, #E6C55A)", color: "#1C1500" }}
               data-testid="button-close-confirmation"
             >
               Done
             </button>
           </div>
         )}
-        <div className="h-[2px] w-full" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
+        <div className="h-[2px] w-full" style={{ background: "linear-gradient(90deg, transparent, #E49B1D, transparent)" }} />
       </motion.div>
     </motion.div>
   );
@@ -362,23 +362,23 @@ export default function HamburgerMenu({
             style={{ background: isDark ? "linear-gradient(160deg, #1C1500 0%, #0A0800 100%)" : "#FFFFFF" }}
           >
             {/* Gold shimmer top bar */}
-            <div className="h-[3px] w-full" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, #F0CC60, #D4AF37, transparent)" }} />
+            <div className="h-[3px] w-full" style={{ background: "linear-gradient(90deg, transparent, #E49B1D, #F0CC60, #E49B1D, transparent)" }} />
 
             {/* Header */}
             <div
               className="sticky top-0 z-10 flex items-center justify-between px-5 py-4"
-              style={{ background: isDark ? "linear-gradient(180deg, #1C1500 80%, transparent)" : "#FFFFFF", borderBottom: "1px solid rgba(212,175,55,0.2)" }}
+              style={{ background: isDark ? "linear-gradient(180deg, #1C1500 80%, transparent)" : "#FFFFFF", borderBottom: "1px solid rgba(228,155,29,0.2)" }}
             >
               <div className="flex items-center gap-2">
-                <div className="w-1 h-6 rounded-full" style={{ background: "linear-gradient(180deg, #D4AF37, #E6C55A)" }} />
-                <h2 className="text-base font-black tracking-[0.25em] uppercase" style={{ color: "#D4AF37", fontFamily: "'DM Sans', sans-serif" }}>
+                <div className="w-1 h-6 rounded-full" style={{ background: "linear-gradient(180deg, #E49B1D, #E6C55A)" }} />
+                <h2 className="text-base font-black tracking-[0.25em] uppercase" style={{ color: "#E49B1D", fontFamily: "'DM Sans', sans-serif" }}>
                   {t.menuCategories}
                 </h2>
               </div>
               <button
                 onClick={onClose}
                 className="w-9 h-9 rounded-full flex items-center justify-center transition-all active:scale-90"
-                style={{ background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.3)", color: "#D4AF37" }}
+                style={{ background: "rgba(228,155,29,0.1)", border: "1px solid rgba(228,155,29,0.3)", color: "#E49B1D" }}
                 data-testid="button-close-menu"
               >
                 <X className="h-4 w-4" />
@@ -397,11 +397,11 @@ export default function HamburgerMenu({
                       whileTap={{ scale: 0.96 }}
                       onClick={() => handleCategoryClick(category.id)}
                       className="relative p-4 rounded-2xl text-left transition-all duration-200 overflow-hidden"
-                      style={{ background: isDark ? "rgba(212,175,55,0.06)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.22)" : "1px solid rgba(0,0,0,0.1)" }}
+                      style={{ background: isDark ? "rgba(228,155,29,0.06)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.22)" : "1px solid rgba(0,0,0,0.1)" }}
                       data-testid={`button-category-${category.id}`}
                     >
-                      <div className="absolute top-0 left-0 w-full h-[2px]" style={{ background: "linear-gradient(90deg, #D4AF37, #E6C55A)" }} />
-                      <p className="text-[10px] font-semibold tracking-widest uppercase mb-0.5" style={{ color: "rgba(212,175,55,0.7)", fontFamily: "'DM Sans', sans-serif" }}>
+                      <div className="absolute top-0 left-0 w-full h-[2px]" style={{ background: "linear-gradient(90deg, #E49B1D, #E6C55A)" }} />
+                      <p className="text-[10px] font-semibold tracking-widest uppercase mb-0.5" style={{ color: "rgba(228,155,29,0.7)", fontFamily: "'DM Sans', sans-serif" }}>
                         {String(index + 1).padStart(2, "0")}
                       </p>
                       <p className="text-[13px] font-bold tracking-wide leading-tight" style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", fontFamily: "'DM Sans', sans-serif" }}>
@@ -414,9 +414,9 @@ export default function HamburgerMenu({
 
               {/* ── Divider ── */}
               <div className="flex items-center gap-3">
-                <div className="flex-1 h-px" style={{ background: "rgba(212,175,55,0.15)" }} />
-                <Utensils className="w-3.5 h-3.5" style={{ color: "rgba(212,175,55,0.4)" }} />
-                <div className="flex-1 h-px" style={{ background: "rgba(212,175,55,0.15)" }} />
+                <div className="flex-1 h-px" style={{ background: "rgba(228,155,29,0.15)" }} />
+                <Utensils className="w-3.5 h-3.5" style={{ color: "rgba(228,155,29,0.4)" }} />
+                <div className="flex-1 h-px" style={{ background: "rgba(228,155,29,0.15)" }} />
               </div>
 
               {/* ── Reservation Section ── */}
@@ -424,12 +424,12 @@ export default function HamburgerMenu({
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setShowReservation(true)}
                 className="w-full flex items-center gap-4 px-4 py-3.5 rounded-2xl transition-all"
-                style={{ background: isDark ? "rgba(212,175,55,0.06)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.28)" : "1px solid rgba(0,0,0,0.1)" }}
+                style={{ background: isDark ? "rgba(228,155,29,0.06)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.28)" : "1px solid rgba(0,0,0,0.1)" }}
                 data-testid="button-open-reservation"
               >
                 <img src={reservationImg} alt="Reservation" className="w-12 h-12 object-contain flex-shrink-0" />
                 <div className="text-left flex-1">
-                  <p className="text-[11px] font-semibold tracking-[0.2em] uppercase mb-0.5" style={{ color: "rgba(212,175,55,0.55)", fontFamily: "'DM Sans', sans-serif" }}>
+                  <p className="text-[11px] font-semibold tracking-[0.2em] uppercase mb-0.5" style={{ color: "rgba(228,155,29,0.55)", fontFamily: "'DM Sans', sans-serif" }}>
                     Table Booking
                   </p>
                   <p className="text-[15px] font-black tracking-wide" style={{ color: isDark ? "#E8D8B4" : "#1a1a1a", fontFamily: "'DM Sans', sans-serif" }}>
@@ -439,31 +439,31 @@ export default function HamburgerMenu({
                     Reserve your table in seconds
                   </p>
                 </div>
-                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(90deg, #D4AF37, #E6C55A)" }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(90deg, #E49B1D, #E6C55A)" }}>
                   <ChevronRight className="w-4 h-4" style={{ color: "#1C1500", strokeWidth: 3 }} />
                 </div>
               </motion.button>
 
               {/* ── Pay & Order ── */}
-              <div className="rounded-2xl overflow-hidden" style={{ background: isDark ? "rgba(212,175,55,0.04)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.22)" : "1px solid rgba(0,0,0,0.1)" }}>
-                <div className="px-4 py-3" style={{ borderBottom: isDark ? "1px solid rgba(212,175,55,0.12)" : "1px solid rgba(0,0,0,0.08)", background: isDark ? "rgba(212,175,55,0.05)" : "#FFFFFF" }}>
+              <div className="rounded-2xl overflow-hidden" style={{ background: isDark ? "rgba(228,155,29,0.04)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.22)" : "1px solid rgba(0,0,0,0.1)" }}>
+                <div className="px-4 py-3" style={{ borderBottom: isDark ? "1px solid rgba(228,155,29,0.12)" : "1px solid rgba(0,0,0,0.08)", background: isDark ? "rgba(228,155,29,0.05)" : "#FFFFFF" }}>
                   <div className="flex items-center gap-2">
-                    <QrCode className="w-3.5 h-3.5" style={{ color: "#D4AF37" }} />
-                    <p className="text-[10px] tracking-[0.25em] font-semibold uppercase" style={{ color: "rgba(212,175,55,0.7)", fontFamily: "'DM Sans', sans-serif" }}>
+                    <QrCode className="w-3.5 h-3.5" style={{ color: "#E49B1D" }} />
+                    <p className="text-[10px] tracking-[0.25em] font-semibold uppercase" style={{ color: "rgba(228,155,29,0.7)", fontFamily: "'DM Sans', sans-serif" }}>
                       Pay &amp; Order
                     </p>
                   </div>
                 </div>
                 <div className="p-4 space-y-3">
-                  <div className="flex items-center justify-between rounded-xl px-4 py-3" style={{ background: isDark ? "rgba(212,175,55,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.2)" : "1px solid rgba(0,0,0,0.1)" }}>
+                  <div className="flex items-center justify-between rounded-xl px-4 py-3" style={{ background: isDark ? "rgba(228,155,29,0.07)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.2)" : "1px solid rgba(0,0,0,0.1)" }}>
                     <div>
-                      <p className="text-[10px] tracking-widest uppercase mb-0.5" style={{ color: "rgba(212,175,55,0.5)", fontFamily: "'DM Sans', sans-serif" }}>UPI ID</p>
-                      <p className="text-sm font-bold tracking-wide" style={{ color: "#D4AF37", fontFamily: "monospace" }}>{upiId || "Loading..."}</p>
+                      <p className="text-[10px] tracking-widest uppercase mb-0.5" style={{ color: "rgba(228,155,29,0.5)", fontFamily: "'DM Sans', sans-serif" }}>UPI ID</p>
+                      <p className="text-sm font-bold tracking-wide" style={{ color: "#E49B1D", fontFamily: "monospace" }}>{upiId || "Loading..."}</p>
                     </div>
                     <button
                       onClick={handleCopyUpi}
                       className="flex items-center gap-1.5 px-3 py-2 rounded-full text-[11px] font-bold transition-all active:scale-95"
-                      style={{ background: copiedUpi ? "#22c55e" : "linear-gradient(90deg, #D4AF37, #E6C55A)", color: "#1C1500" }}
+                      style={{ background: copiedUpi ? "#22c55e" : "linear-gradient(90deg, #E49B1D, #E6C55A)", color: "#1C1500" }}
                       data-testid="button-copy-upi"
                     >
                       {copiedUpi ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
@@ -474,7 +474,7 @@ export default function HamburgerMenu({
                   <button
                     onClick={() => setShowQr(!showQr)}
                     className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold tracking-widest uppercase transition-all active:scale-95"
-                    style={{ border: isDark ? "1px solid rgba(212,175,55,0.3)" : "1px solid rgba(0,0,0,0.1)", color: "#D4AF37", background: isDark ? "rgba(212,175,55,0.05)" : "#FFFFFF" }}
+                    style={{ border: isDark ? "1px solid rgba(228,155,29,0.3)" : "1px solid rgba(0,0,0,0.1)", color: "#E49B1D", background: isDark ? "rgba(228,155,29,0.05)" : "#FFFFFF" }}
                     data-testid="button-show-qr"
                   >
                     <QrCode className="w-3.5 h-3.5" />
@@ -491,7 +491,7 @@ export default function HamburgerMenu({
                         className="overflow-hidden"
                       >
                         <div className="flex flex-col items-center gap-2 pt-1">
-                          <div className="w-44 h-44 rounded-xl flex items-center justify-center" style={{ background: "white", border: "3px solid #D4AF37" }}>
+                          <div className="w-44 h-44 rounded-xl flex items-center justify-center" style={{ background: "white", border: "3px solid #E49B1D" }}>
                             <img
                               src={`https://api.qrserver.com/v1/create-qr-code/?size=176x176&data=upi://pay?pa=${upiId}&pn=BarrelBorn&cu=INR`}
                               alt="UPI QR Code"
@@ -509,7 +509,7 @@ export default function HamburgerMenu({
                   <div className="flex items-center gap-2 pt-1">
                     {["GPay", "PhonePe", "Paytm", "BHIM"].map((app) => (
                       <div key={app} className="flex-1 text-center py-1.5 rounded-lg text-[10px] font-semibold"
-                        style={{ background: isDark ? "rgba(212,175,55,0.06)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.15)" : "1px solid rgba(0,0,0,0.1)", color: isDark ? "rgba(220,212,200,0.5)" : "rgba(0,0,0,0.45)", fontFamily: "'DM Sans', sans-serif" }}>
+                        style={{ background: isDark ? "rgba(228,155,29,0.06)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.15)" : "1px solid rgba(0,0,0,0.1)", color: isDark ? "rgba(220,212,200,0.5)" : "rgba(0,0,0,0.45)", fontFamily: "'DM Sans', sans-serif" }}>
                         {app}
                       </div>
                     ))}
@@ -518,9 +518,9 @@ export default function HamburgerMenu({
               </div>
 
               {/* ── Restaurant Info ── */}
-              <div className="rounded-2xl overflow-hidden" style={{ background: isDark ? "rgba(212,175,55,0.04)" : "#FFFFFF", border: isDark ? "1px solid rgba(212,175,55,0.18)" : "1px solid rgba(0,0,0,0.1)" }}>
-                <div className="px-4 py-3" style={{ borderBottom: isDark ? "1px solid rgba(212,175,55,0.12)" : "1px solid rgba(0,0,0,0.08)", background: isDark ? "transparent" : "#FFFFFF" }}>
-                  <p className="text-[10px] tracking-[0.25em] font-semibold uppercase" style={{ color: "rgba(212,175,55,0.5)", fontFamily: "'DM Sans', sans-serif" }}>
+              <div className="rounded-2xl overflow-hidden" style={{ background: isDark ? "rgba(228,155,29,0.04)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.18)" : "1px solid rgba(0,0,0,0.1)" }}>
+                <div className="px-4 py-3" style={{ borderBottom: isDark ? "1px solid rgba(228,155,29,0.12)" : "1px solid rgba(0,0,0,0.08)", background: isDark ? "transparent" : "#FFFFFF" }}>
+                  <p className="text-[10px] tracking-[0.25em] font-semibold uppercase" style={{ color: "rgba(228,155,29,0.5)", fontFamily: "'DM Sans', sans-serif" }}>
                     Restaurant Info
                   </p>
                 </div>
@@ -625,10 +625,10 @@ export default function HamburgerMenu({
               </div>
 
               {/* Footer */}
-              <div className="h-px w-full" style={{ background: "rgba(212,175,55,0.1)" }} />
+              <div className="h-px w-full" style={{ background: "rgba(228,155,29,0.1)" }} />
               <p
                 className="text-center text-[10px] tracking-widest cursor-pointer transition-opacity hover:opacity-80"
-                style={{ color: "rgba(212,175,55,0.3)", fontFamily: "'DM Sans', sans-serif" }}
+                style={{ color: "rgba(228,155,29,0.3)", fontFamily: "'DM Sans', sans-serif" }}
                 onClick={() => window.open("https://www.atdigitalmenu.com", "_blank")}
               >
                 Powered by AT Digital Menu
