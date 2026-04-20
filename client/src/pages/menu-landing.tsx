@@ -18,12 +18,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSlot,
-} from "@/components/ui/input-otp";
-import { REGEXP_ONLY_DIGITS } from "input-otp";
 
 import premiumFoodImg from "@assets/image_1765866040643.png";
 import premiumBarImg from "@assets/stock_images/premium_whisky_cockt_68b3295e.jpg";
@@ -466,9 +460,10 @@ export default function MenuLanding() {
             <motion.div
               className="relative w-full max-w-sm rounded-3xl overflow-hidden"
               style={{
-                background: isDark ? "#030101" : "#FFFFFF",
-                border: isDark ? "1.5px solid #E49B1D" : "1.5px solid rgba(228,155,29,0.5)",
-                boxShadow: isDark ? "0 0 60px rgba(228,155,29,0.18), 0 24px 64px rgba(0,0,0,0.7)" : "0 0 40px rgba(228,155,29,0.12), 0 24px 64px rgba(0,0,0,0.15)",
+                background: "#030101",
+                border: isDark ? "5px solid #E49B1D" : "5px solid #c4722a",
+                boxShadow: "0 0 60px rgba(228,155,29,0.18), 0 24px 64px rgba(0,0,0,0.7)",
+                fontFamily: "'DM Sans', sans-serif",
               }}
               initial={{ scale: 0.88, y: 40, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
@@ -497,81 +492,74 @@ export default function MenuLanding() {
                   src="/tarang-logo-circle.png"
                   alt="Tarang Kitchen & Bar"
                   className="mb-1"
-                  style={{ filter: "drop-shadow(0 0 12px rgba(228,155,29,0.5))", width: "150px", height: "150px", objectFit: "contain", borderRadius: "50%" }}
+                  style={{ width: "200px", height: "200px", objectFit: "contain", borderRadius: "50%" }}
                 />
 
                 {/* Ornamental divider */}
                 <div className="flex items-center gap-3 w-full mb-4">
                   <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, transparent, #E49B1D)" }} />
-                  <span className="text-[10px] tracking-[0.3em] font-light" style={{ color: "var(--bb-gold)" }}>WELCOME</span>
+                  <span className="text-[10px] tracking-[0.3em] font-medium" style={{ color: "#E49B1D", fontFamily: "'DM Sans', sans-serif" }}>WELCOME</span>
                   <div className="flex-1 h-px" style={{ background: "linear-gradient(to left, transparent, #E49B1D)" }} />
                 </div>
 
                 {/* Headline */}
                 <h2
-                  className="text-center font-black mb-1 leading-tight uppercase tracking-widest"
-                  style={{ color: "var(--bb-gold)", fontFamily: "'Cormorant Garamond', serif", fontSize: "20px", letterSpacing: "0.18em" }}
+                  className="text-center font-bold mb-1 leading-tight uppercase tracking-widest"
+                  style={{ color: "#E49B1D", fontFamily: "'DM Sans', sans-serif", fontSize: "20px", letterSpacing: "0.18em" }}
                 >
                   Please Enter Your Details
                 </h2>
-                <p className="text-center text-[11px] mb-5 font-light uppercase tracking-widest" style={{ color: "#6A5A3A", letterSpacing: "0.12em" }}>
+                <p className="text-center text-[11px] mb-5 font-medium uppercase tracking-widest" style={{ color: "#E49B1D", letterSpacing: "0.12em", opacity: 0.7, fontFamily: "'DM Sans', sans-serif" }}>
                   To Proceed To Our Menu
                 </p>
 
                 <form onSubmit={handleSubmit} className="w-full space-y-4">
                   {/* Name field */}
-                  <div className="space-y-1.5">
-                    <label className="text-[10px] tracking-[0.2em] font-medium uppercase" style={{ color: "#B8986A" }}>
+                  <div className="space-y-1">
+                    <label className="text-[10px] tracking-[0.2em] font-medium uppercase" style={{ color: "#E49B1D", fontFamily: "'DM Sans', sans-serif" }}>
                       Your Name
                     </label>
-                    <div
-                      className="flex items-center rounded-xl px-4 py-0 h-12 transition-all"
-                      style={{ background: "rgba(212,175,55,0.06)", border: "1px solid rgba(212,175,55,0.35)" }}
-                    >
-                      <input
-                        value={customerName}
-                        onChange={(e) => setCustomerName(e.target.value)}
-                        placeholder="Enter your name"
-                        className="w-full bg-transparent outline-none text-sm font-light placeholder:opacity-40"
-                        style={{ color: isDark ? "var(--bb-input-text)" : "#1a1a1a", caretColor: "#D4AF37" }}
-                        data-testid="input-customer-name"
-                      />
-                    </div>
+                    <input
+                      value={customerName}
+                      onChange={(e) => setCustomerName(e.target.value)}
+                      placeholder="Enter your name"
+                      className="w-full bg-transparent outline-none text-sm font-medium py-2"
+                      style={{
+                        borderBottom: "2px solid #E49B1D",
+                        color: "#E49B1D",
+                        caretColor: "#E49B1D",
+                        fontFamily: "'DM Sans', sans-serif",
+                      }}
+                      data-testid="input-customer-name"
+                    />
                   </div>
 
-                  {/* Phone — 10 OTP digit boxes */}
-                  <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] font-medium uppercase" style={{ color: "#B8986A" }}>
+                  {/* Phone — underline input */}
+                  <div className="space-y-1">
+                    <label className="text-[10px] tracking-[0.2em] font-medium uppercase" style={{ color: "#E49B1D", fontFamily: "'DM Sans', sans-serif" }}>
                       Contact Number
                     </label>
-                    <div className="flex justify-center">
-                      <InputOTP
-                        maxLength={10}
-                        value={customerPhone}
-                        onChange={(val) => setCustomerPhone(val)}
-                        pattern={REGEXP_ONLY_DIGITS}
-                        inputMode="numeric"
-                        data-testid="input-customer-phone"
-                      >
-                        <InputOTPGroup className="gap-[5px]">
-                          {Array.from({ length: 10 }).map((_, i) => (
-                            <InputOTPSlot
-                              key={i}
-                              index={i}
-                              className="h-10 w-[27px] rounded-lg text-sm font-bold first:rounded-l-lg first:border-l last:rounded-r-lg transition-all"
-                              style={{
-                                background: isDark ? "rgba(212,175,55,0.14)" : "rgba(212,175,55,0.08)",
-                                border: "1.5px solid rgba(212,175,55,0.6)",
-                                color: isDark ? "#F0E080" : "#1a1a1a",
-                                borderRadius: "8px",
-                              }}
-                            />
-                          ))}
-                        </InputOTPGroup>
-                      </InputOTP>
-                    </div>
+                    <input
+                      type="tel"
+                      inputMode="numeric"
+                      maxLength={10}
+                      value={customerPhone}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+                        setCustomerPhone(val);
+                      }}
+                      placeholder="Enter contact number"
+                      className="w-full bg-transparent outline-none text-sm font-medium py-2"
+                      style={{
+                        borderBottom: "2px solid #E49B1D",
+                        color: "#E49B1D",
+                        caretColor: "#E49B1D",
+                        fontFamily: "'DM Sans', sans-serif",
+                      }}
+                      data-testid="input-customer-phone"
+                    />
                     {customerPhone.length > 0 && customerPhone.length < 10 && (
-                      <p className="text-center text-[10px]" style={{ color: "#B8986A" }}>
+                      <p className="text-[10px]" style={{ color: "#E49B1D", opacity: 0.7, fontFamily: "'DM Sans', sans-serif" }}>
                         {10 - customerPhone.length} digit{10 - customerPhone.length !== 1 ? "s" : ""} remaining
                       </p>
                     )}
@@ -598,7 +586,7 @@ export default function MenuLanding() {
                     type="button"
                     onClick={handleSkip}
                     className="w-full text-center text-xs py-1 transition-opacity hover:opacity-70"
-                    style={{ color: "#6A5A3A", letterSpacing: "0.08em" }}
+                    style={{ color: "#E49B1D", letterSpacing: "0.08em", opacity: 0.7, fontFamily: "'DM Sans', sans-serif" }}
                     data-testid="button-skip-popup"
                   >
                     Continue without entering details →
