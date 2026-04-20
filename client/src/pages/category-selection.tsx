@@ -342,7 +342,7 @@ export default function CategorySelection() {
               <img
                 src="/tarang-logo-header-cropped.png"
                 alt="Tarang Kitchen & Bar"
-                style={{ height: "44px", width: "188px", objectFit: "contain", display: "block", transform: "scale(1.28)", transformOrigin: "center" }}
+                style={{ height: "42px", width: "178px", objectFit: "contain", display: "block", transform: "scale(1.16)", transformOrigin: "center" }}
                 data-testid="img-logo"
               />
             </div>

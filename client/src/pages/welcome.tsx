@@ -263,21 +263,21 @@ export default function Welcome() {
               className="transition-opacity hover:opacity-80"
               data-testid="button-social-instagram"
             >
-              <img src={instaImg} alt="Instagram" className="w-12 h-12 rounded-xl object-cover" />
+              <img src={instaImg} alt="Instagram" className="w-10 h-10 rounded-xl object-contain" />
             </button>
             <button
               onClick={() => handleSocialClick(links.facebook)}
               className="transition-opacity hover:opacity-80"
               data-testid="button-social-facebook"
             >
-              <img src={fbImg} alt="Facebook" className="w-12 h-12 rounded-xl object-cover" />
+              <img src={fbImg} alt="Facebook" className="w-10 h-10 rounded-xl object-contain" />
             </button>
             <button
               onClick={() => handleSocialClick(links.youtube)}
               className="transition-opacity hover:opacity-80"
               data-testid="button-social-youtube"
             >
-              <img src={ytImg} alt="YouTube" className="w-12 h-12 rounded-xl object-cover" />
+              <img src={ytImg} alt="YouTube" className="w-10 h-10 rounded-xl object-contain" />
             </button>
           </div>
 
@@ -297,7 +297,7 @@ export default function Welcome() {
               <img
                 src={googleReviewImg}
                 alt="Rate us on Google"
-                style={{ width: "210px", display: "block", marginTop: "-74px" }}
+                style={{ width: "188px", display: "block", marginTop: "-66px" }}
               />
             </button>
           </div>
