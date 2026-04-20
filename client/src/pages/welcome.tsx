@@ -194,9 +194,10 @@ export default function Welcome() {
   return (
     <div
       className="bb-bg h-screen w-full overflow-hidden relative flex flex-col"
+      style={isDark ? { backgroundColor: '#030101', backgroundImage: 'none' } : undefined}
     >
-      {/* Subtle dark fade over the background pattern */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(255,255,255,0.08)", zIndex: 0 }} />
+      {/* Subtle fade over the background (light mode only) */}
+      {!isDark && <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(255,255,255,0.08)", zIndex: 0 }} />}
       <MediaPreloader onComplete={() => setMediaReady(true)} />
 
       {/* Theme toggle — fixed top left */}
