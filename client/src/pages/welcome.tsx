@@ -237,21 +237,21 @@ export default function Welcome() {
           style={{
             background: "#c4722a",
             border: "none",
-            color: "#030101",
+            color: "#FFFFFF",
             marginTop: "-10px",
-            fontSize: "17px",
+            fontSize: "21px",
           }}
           data-testid="button-explore-menu"
         >
           <img
             src={spoonForkImg}
             alt=""
-            className="w-7 h-7 object-contain"
+            className="w-9 h-9 object-contain"
             style={{
-              filter: "brightness(0) saturate(100%)",
+              filter: "brightness(0) invert(1)",
             }}
           />
-          <span style={{ color: "#030101" }}>{welcomeUI.buttonText || t.exploreMenu}</span>
+          <span style={{ color: "#FFFFFF" }}>{welcomeUI.buttonText || t.exploreMenu}</span>
         </button>
 
         {/* Follow Our Socials */}
