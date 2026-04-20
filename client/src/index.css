@@ -280,7 +280,7 @@
 
 .bb-bg {
   background-color: var(--bb-bg);
-  background-image: none;
+  background-image: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15));
 }
 
 [data-theme="light"] .bb-bg {
