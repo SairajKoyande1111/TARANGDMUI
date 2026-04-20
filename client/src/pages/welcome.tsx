@@ -195,6 +195,8 @@ export default function Welcome() {
     <div
       className="bb-bg h-screen w-full overflow-hidden relative flex flex-col"
     >
+      {/* Subtle dark fade over the background pattern */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(0,0,0,0.10)", zIndex: 0 }} />
       <MediaPreloader onComplete={() => setMediaReady(true)} />
 
       {/* Theme toggle — fixed top left */}
@@ -208,7 +210,7 @@ export default function Welcome() {
       </div>
 
       {/* Main content */}
-      <div className="flex flex-col items-center w-full flex-1 px-0 pt-0 pb-0 gap-3 justify-start">
+      <div className="relative z-10 flex flex-col items-center w-full flex-1 px-0 pt-0 pb-0 gap-3 justify-start">
 
         {/* Logo */}
         <div
