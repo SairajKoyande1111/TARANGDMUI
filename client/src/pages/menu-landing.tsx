@@ -26,7 +26,7 @@ import premiumMocktailsImg from "@assets/stock_images/premium_colorful_moc_1a15d
 import cocktailsImg from "@assets/COCKTAILS_1766751289781.jpg";
 import craftedBeerImg from "@assets/CRAFTED_BEER_1766750491358.jpg";
 import fallbackImg from "@assets/coming_soon_imagev2_1766811809828.jpg";
-import drinksOfferBannerImg from "@assets/LIMITED_TIME_OFFER!_VISIT_US_TODAY!_BOOK_YOUR_TABLE_555-0199_w_1776780415408.png";
+import drinksOfferBannerImg from "@assets/LIMITED_TIME_OFFER!_VISIT_US_TODAY!_BOOK_YOUR_TABLE_555-0199_w_1776780766076.png";
 import type { Logo } from "@shared/schema";
 
 
@@ -619,7 +619,7 @@ export default function MenuLanding() {
           >
             <div
               className="relative rounded-[10px] overflow-hidden cursor-pointer group"
-              style={{ height: "280px", width: "100%", flexShrink: 0 }}
+              style={{ width: "100%", aspectRatio: "1024 / 576", flexShrink: 0 }}
               onClick={() => setLightboxImage(carouselImages[currentImageIndex])}
               data-testid="banner-image-carousel"
             >
@@ -645,14 +645,6 @@ export default function MenuLanding() {
                   />
                 </motion.div>
               ))}
-
-              <div
-                className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(21,21,21,0.6), transparent)",
-                }}
-              />
             </div>
           </div>
         )}
