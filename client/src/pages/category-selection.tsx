@@ -338,11 +338,11 @@ export default function CategorySelection() {
               </Button>
             </div>
 
-            <div className="flex-1 flex justify-center items-center">
+            <div className="flex-1 flex justify-center items-center overflow-visible">
               <img
                 src="/tarang-logo-circle.png"
                 alt="Tarang Kitchen & Bar"
-                style={{ height: "68px", width: "68px", objectFit: "contain", display: "block" }}
+                style={{ height: "68px", width: "68px", objectFit: "contain", display: "block", transform: "scale(1.45)", transformOrigin: "center" }}
                 data-testid="img-logo"
               />
             </div>
