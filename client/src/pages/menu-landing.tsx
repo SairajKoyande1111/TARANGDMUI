@@ -697,40 +697,85 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
                   <div
                     className="rounded-xl overflow-hidden"
                     style={{
-                      background: "var(--bb-card)",
-                      border: "1px solid rgba(228,155,29,0.3)",
+                      background: "rgba(228,155,29,0.06)",
+                      border: "1px solid rgba(228,155,29,0.25)",
                     }}
                   >
-                    {/* Header */}
                     <div
-                      className="grid grid-cols-5 text-center py-2.5 px-1 gap-1"
-                      style={{ background: "linear-gradient(90deg, #E49B1D, #E6C55A)" }}
+                      className="w-full px-4 py-3"
+                      style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
                     >
-                      <div className="text-[9px] uppercase font-black tracking-wider text-left pl-2" style={{ color: "#3D3100" }}>Item</div>
-                      <div className="text-[9px] uppercase font-black tracking-wider" style={{ color: "#3D3100" }}>Veg<br/>₹650</div>
-                      <div className="text-[9px] uppercase font-black tracking-wider" style={{ color: "#3D3100" }}>Veg+<br/>₹750</div>
-                      <div className="text-[9px] uppercase font-black tracking-wider" style={{ color: "#3D3100" }}>NV<br/>₹800</div>
-                      <div className="text-[9px] uppercase font-black tracking-wider" style={{ color: "#3D3100" }}>NV+<br/>₹950</div>
-                    </div>
-                    {planComparison.map((row, idx) => (
-                      <div
-                        key={row.row}
-                        className="grid grid-cols-5 py-2 px-1 gap-1 items-center"
-                        style={{
-                          background: idx % 2 ? "rgba(228,155,29,0.04)" : "transparent",
-                          borderTop: "1px solid rgba(228,155,29,0.1)",
-                        }}
+                      <p
+                        className="text-[15px] font-bold uppercase tracking-wider"
+                        style={{ color: "var(--bb-gold)", fontFamily: "'DM Sans', sans-serif" }}
                       >
-                        <div className="text-[10px] font-semibold pl-2 leading-tight" style={{ color: "var(--bb-text)" }}>{row.row}</div>
-                        {row.values.map((v, i) => (
-                          <div key={i} className="text-[10px] text-center font-medium" style={{ color: v === "✓" ? "#5DA66B" : v === "✗" ? "#C44B3F" : "var(--bb-gold-2)" }}>
-                            {v}
-                          </div>
-                        ))}
+                        Plan Comparison
+                      </p>
+                    </div>
+
+                    {/* Column headers */}
+                    <div
+                      className="grid grid-cols-5 px-3 py-2.5 gap-2 items-end"
+                      style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
+                    >
+                      <div className="text-[12px] font-bold uppercase tracking-wider" style={{ color: "var(--bb-gold)" }}>Item</div>
+                      <div className="text-center">
+                        <div className="text-[12px] font-bold" style={{ color: "var(--bb-gold)" }}>Veg</div>
+                        <div className="text-[11px]" style={{ color: "var(--bb-gold)", opacity: 0.75 }}>₹650</div>
                       </div>
-                    ))}
+                      <div className="text-center">
+                        <div className="text-[12px] font-bold" style={{ color: "var(--bb-gold)" }}>Veg+</div>
+                        <div className="text-[11px]" style={{ color: "var(--bb-gold)", opacity: 0.75 }}>₹750</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-[12px] font-bold" style={{ color: "var(--bb-gold)" }}>NV</div>
+                        <div className="text-[11px]" style={{ color: "var(--bb-gold)", opacity: 0.75 }}>₹800</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-[12px] font-bold" style={{ color: "var(--bb-gold)" }}>NV+</div>
+                        <div className="text-[11px]" style={{ color: "var(--bb-gold)", opacity: 0.75 }}>₹950</div>
+                      </div>
+                    </div>
+
+                    {/* Rows */}
+                    <div className="px-3 py-2">
+                      {planComparison.map((row, idx) => (
+                        <div
+                          key={row.row}
+                          className="grid grid-cols-5 gap-2 items-center py-2"
+                          style={{
+                            borderBottom:
+                              idx === planComparison.length - 1
+                                ? "none"
+                                : "1px solid rgba(228,155,29,0.12)",
+                          }}
+                        >
+                          <div className="text-[14px] font-semibold leading-tight" style={{ color: "var(--bb-text)" }}>
+                            {row.row}
+                          </div>
+                          {row.values.map((v, i) => (
+                            <div
+                              key={i}
+                              className="text-[14px] text-center"
+                              style={{
+                                color:
+                                  v === "✓"
+                                    ? "#5DA66B"
+                                    : v === "✗" || v === "–"
+                                    ? "var(--bb-text)"
+                                    : "var(--bb-gold)",
+                                opacity: v === "✗" || v === "–" ? 0.4 : 1,
+                                fontWeight: v === "✓" || v === "✗" || v === "–" ? 700 : 600,
+                              }}
+                            >
+                              {v}
+                            </div>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-[10px] text-center mt-2 italic" style={{ color: "var(--bb-text)", opacity: 0.55 }}>
+                  <p className="text-[12px] text-center mt-2" style={{ color: "var(--bb-text)", opacity: 0.6 }}>
                     Papad · Pickle · Lemon · Onion included in all plans
                   </p>
                 </motion.div>
