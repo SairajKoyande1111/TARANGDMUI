@@ -549,34 +549,14 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
             }}
           />
 
-          {/* Header */}
+          {/* Header — centered Tarang logo */}
           <div
-            className="flex items-center justify-between px-4 py-3.5 flex-shrink-0"
+            className="relative flex flex-col items-center px-4 pt-4 pb-3 flex-shrink-0"
             style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
           >
-            <div className="min-w-0">
-              <p
-                className="text-[10px] uppercase tracking-[0.3em] font-light mb-0.5 flex items-center gap-1.5"
-                style={{ color: "var(--bb-gold)" }}
-              >
-                <Sparkles className="w-2.5 h-2.5" />
-                Join Us For Special Events
-              </p>
-              <h2
-                className="text-2xl font-black leading-none uppercase tracking-widest"
-                style={{
-                  color: "var(--bb-gold)",
-                  fontFamily: "'Cormorant Garamond', serif",
-                  letterSpacing: "0.16em",
-                }}
-              >
-                Celebration Menu
-              </h2>
-            </div>
-
             <button
               onClick={onClose}
-              className="w-9 h-9 rounded-full flex items-center justify-center transition-all active:scale-90 flex-shrink-0"
+              className="absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center transition-all active:scale-90"
               style={{
                 background: "rgba(228,155,29,0.12)",
                 border: "1.5px solid rgba(228,155,29,0.45)",
@@ -586,6 +566,30 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
             >
               <X className="w-4 h-4" />
             </button>
+
+            <img
+              src="/tarang-logo-circle.png"
+              alt="Tarang Kitchen & Bar"
+              className="w-20 h-20 object-contain mb-2"
+              data-testid="img-party-menu-logo"
+            />
+
+            <p
+              className="text-[10px] uppercase tracking-[0.3em] font-light mb-0.5"
+              style={{ color: "var(--bb-gold)" }}
+            >
+              Join Us For Special Events
+            </p>
+            <h2
+              className="text-2xl font-black leading-none uppercase tracking-widest text-center"
+              style={{
+                color: "var(--bb-gold)",
+                fontFamily: "'Cormorant Garamond', serif",
+                letterSpacing: "0.16em",
+              }}
+            >
+              Celebration Menu
+            </h2>
           </div>
 
           {/* Tabs */}
@@ -655,18 +659,6 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
                       }}
                       data-testid={`card-plan-${plan.id}`}
                     >
-                      {plan.featured && (
-                        <div
-                          className="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest"
-                          style={{
-                            background: "linear-gradient(135deg, #E49B1D, #E6C55A)",
-                            color: "#3D3100",
-                          }}
-                        >
-                          ★ Top Pick
-                        </div>
-                      )}
-
                       {/* Header band */}
                       <div
                         className="px-4 py-3 flex items-end justify-between"
@@ -690,8 +682,8 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
                         </div>
                         <div className="text-right">
                           <p
-                            className="text-3xl font-black leading-none"
-                            style={{ color: "#fff", fontFamily: "'Cormorant Garamond', serif" }}
+                            className="text-xl font-black leading-none"
+                            style={{ color: "#fff", fontFamily: "'DM Sans', sans-serif" }}
                           >
                             ₹{plan.price}
                           </p>
@@ -701,27 +693,24 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
                         </div>
                       </div>
 
-                      {/* Inclusions */}
-                      <div className="px-4 py-3 space-y-2">
-                        {plan.inclusions.map((inc) => (
-                          <div key={inc} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" style={{ color: plan.color }} />
-                            <span className="text-[12px]" style={{ color: "var(--bb-text)" }}>
-                              {inc}
-                            </span>
-                          </div>
-                        ))}
-                        <div
-                          className="mt-2 px-2.5 py-1.5 rounded-md text-[10px] uppercase tracking-wider font-semibold inline-flex items-center gap-1"
-                          style={{
-                            background: "rgba(228,155,29,0.12)",
-                            color: "var(--bb-gold)",
-                            border: "1px solid rgba(228,155,29,0.3)",
-                          }}
-                        >
-                          <Sparkles className="w-3 h-3" />
-                          {plan.note}
+                      {/* Inclusions — 2 columns */}
+                      <div className="px-4 py-3">
+                        <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+                          {plan.inclusions.map((inc) => (
+                            <div key={inc} className="flex items-start gap-1.5">
+                              <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-[1px]" style={{ color: plan.color }} />
+                              <span className="text-[13px] leading-snug" style={{ color: "var(--bb-text)" }}>
+                                {inc}
+                              </span>
+                            </div>
+                          ))}
                         </div>
+                        <p
+                          className="mt-3 text-center text-[13px] font-bold uppercase tracking-wider"
+                          style={{ color: "#000" }}
+                        >
+                          {plan.note}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
@@ -1472,19 +1461,18 @@ export default function MenuLanding() {
                 display: "block",
               }}
             />
-            {/* Tap hint pulse badge */}
-            <div
-              className="absolute top-2 right-2 px-2.5 py-1 rounded-full flex items-center gap-1 backdrop-blur-sm"
+          </div>
+          {/* Tap to View pill — below banner */}
+          <div className="flex justify-center mt-2">
+            <span
+              className="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest"
               style={{
-                background: "rgba(0,0,0,0.55)",
-                border: "1px solid rgba(228,155,29,0.6)",
+                background: "linear-gradient(135deg, #E49B1D, #E6C55A)",
+                color: "#3D3100",
               }}
             >
-              <Sparkles className="w-3 h-3" style={{ color: "#E6C55A" }} />
-              <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: "#E6C55A" }}>
-                Tap to View
-              </span>
-            </div>
+              Tap to View
+            </span>
           </div>
         </motion.button>
       </div>
