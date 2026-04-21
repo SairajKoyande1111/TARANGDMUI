@@ -8,6 +8,25 @@ import {
   X,
   Tag,
   Calendar,
+  Sparkles,
+  PartyPopper,
+  Phone,
+  Users,
+  Clock,
+  Wallet,
+  CheckCircle2,
+  XCircle,
+  Wine,
+  Utensils,
+  IceCream2,
+  Cookie,
+  Soup,
+  Wheat,
+  Salad,
+  Beef,
+  Drumstick,
+  GlassWater,
+  ChevronDown,
 } from "lucide-react";
 
 import { useLocation } from "wouter";
@@ -27,6 +46,7 @@ import cocktailsImg from "@assets/COCKTAILS_1766751289781.jpg";
 import craftedBeerImg from "@assets/CRAFTED_BEER_1766750491358.jpg";
 import fallbackImg from "@assets/coming_soon_imagev2_1766811809828.jpg";
 import drinksOfferBannerImg from "@assets/LIMITED_TIME_OFFER!_VISIT_US_TODAY!_BOOK_YOUR_TABLE_555-0199_w_1776780766076.png";
+import celebrationMenuBannerImg from "@assets/Untitled_design_(13)_1776782517090.png";
 import type { Logo } from "@shared/schema";
 
 
@@ -298,6 +318,696 @@ function CouponsFullScreen({
   );
 }
 
+// ============== PARTY MENU DATA ==============
+const partyPlans = [
+  {
+    id: "veg-basic",
+    name: "Veg Plan",
+    tier: "Basic",
+    price: 650,
+    color: "#5DA66B",
+    glow: "rgba(93,166,107,0.35)",
+    inclusions: [
+      "2 Welcome Drinks",
+      "2 Veg Starters",
+      "2 Main Course",
+      "2 Rotis · 2 Rice",
+      "1 Dal · 1 Raita",
+      "1 Ice Cream · 1 Sweet",
+    ],
+    note: "Only 1 Paneer Dish",
+  },
+  {
+    id: "veg-premium",
+    name: "Veg Plan",
+    tier: "Premium",
+    price: 750,
+    color: "#E49B1D",
+    glow: "rgba(228,155,29,0.45)",
+    inclusions: [
+      "2 Welcome Drinks",
+      "3 Veg Starters",
+      "2 Main Course",
+      "2 Rotis · 2 Rice",
+      "1 Dal · 1 Raita",
+      "2 Ice Cream · 2 Sweets",
+    ],
+    note: "No Paneer Restriction",
+  },
+  {
+    id: "nv-std",
+    name: "Non-Veg",
+    tier: "Standard",
+    price: 800,
+    color: "#C44B3F",
+    glow: "rgba(196,75,63,0.4)",
+    inclusions: [
+      "2 Welcome Drinks",
+      "2 Veg + 2 Non-Veg Starters",
+      "2 Main Course",
+      "2 Rotis · 1 Rice · 1 Salad",
+      "1 Dal · 1 Raita",
+      "2 Ice Cream · 1 Sweet",
+    ],
+    note: "No Fish & Mutton",
+  },
+  {
+    id: "nv-premium",
+    name: "Non-Veg",
+    tier: "Premium",
+    price: 950,
+    color: "#9C2B25",
+    glow: "rgba(156,43,37,0.5)",
+    inclusions: [
+      "2 Welcome Drinks",
+      "2 Veg + 2 Non-Veg Starters",
+      "2 Main Course",
+      "2 Rotis · 1 Rice · 1 Salad",
+      "1 Dal · 1 Raita",
+      "2 Ice Cream · 1 Sweet",
+    ],
+    note: "Includes Fish & Mutton",
+    featured: true,
+  },
+];
+
+const hallDetails = [
+  { icon: Wallet, label: "Hall Rent", value: "From ₹5,000", sub: "Max 5 hrs · extra after" },
+  { icon: Users, label: "Capacity", value: "40 – 300", sub: "Guests" },
+  { icon: Phone, label: "Booking", value: "77383 10238", sub: "Call to reserve", href: "tel:+917738310238" },
+  { icon: Clock, label: "Advance", value: "50% Advance", sub: "Balance 2 days prior" },
+];
+
+const occasions = [
+  "Marriage", "Birthday", "Anniversary", "Get-Together", "Kitty Party", "Celebration",
+];
+
+const vegMenuSections = [
+  { icon: GlassWater, title: "Welcome Drinks / Mocktails", items: ["Blue Lagoon", "Spicy Guava", "Fruit Punch", "Virgin Mojito"] },
+  { icon: GlassWater, title: "Fruit Juices", items: ["Pineapple Juice", "Watermelon Juice", "Orange Juice"] },
+  { icon: Soup, title: "Soups", items: ["Veg Manchow Soup", "Veg Sweetcorn Soup", "Veg Hot & Sour Soup", "Veg Lemon Coriander Soup", "Veg Clear Soup", "Tomato Soup"] },
+  { icon: Utensils, title: "Starters – Veg", items: ["Veg Hot Basil", "Paneer Pahadi Tikka", "Paneer Tikka", "Paneer Hot Basil", "Paneer Burnt Garlic Dry", "Veg Manchurian Dry", "Cheese Corn Tikki", "Cheese Corn Balls"] },
+  { icon: Utensils, title: "Main Course – Veg", items: ["Veg Maratha", "Veg Handi", "Veg Hariyali", "Veg Jaipuri", "Veg Kadai", "Veg Jalfrezi", "Aloo Gobi Masala", "Chhole Masala", "Aloo Jeera", "Paneer Butter Masala", "Paneer Tikka Masala", "Paneer Chatpata", "Paneer Do Pyaza", "Paneer Makhanwala", "Paneer Peshawari", "Paneer Handi", "Paneer Mutter Masala"] },
+  { icon: Wheat, title: "Rotis", items: ["Roti", "Naan", "Kulcha"] },
+  { icon: Wheat, title: "Indian Rice", items: ["Veg Pulao", "Veg Biryani", "Steam Rice / Jeera Rice", "Curd Rice", "Green Peas Pulao", "Veg Hyderabadi Biryani"] },
+  { icon: Wheat, title: "Chinese Rice / Noodles", items: ["Fried Rice", "Hakka Noodles", "Singapore Fried Rice", "Singapore Noodles", "Hongkong Fried Rice", "Hongkong Noodles", "Schezwan Fried Rice"] },
+  { icon: Soup, title: "Dal / Kadi", items: ["Dal Fry", "Dal Tadka", "Dal Makhni", "Kolhapuri Dal", "Palak Punjabi", "Dahi Kadi"] },
+  { icon: Salad, title: "Raita / Salad", items: ["Veg Raita", "Boondi Raita", "Pineapple Raita", "Fruit Raita", "Green Salad"] },
+  { icon: IceCream2, title: "Ice Cream Flavours", items: ["Vanilla", "Chocolate", "Strawberry", "Mango", "Butter Scotch"] },
+  { icon: Cookie, title: "Sweet Dish", items: ["Gulab Jamun"] },
+];
+
+const nonVegMenuSections = [
+  { icon: Drumstick, title: "Starters – Non-Veg", items: ["Chicken Hot Basil", "Chicken Pahadi Tikka", "Chicken Tikka", "Chicken Crispy", "Chicken Burnt Garlic Dry", "Chicken Manchurian Dry", "Chicken Perry Dry", "Chicken Koliwada"] },
+  { icon: Beef, title: "Main Course – Chicken", items: ["Chicken Maratha", "Chicken Handi", "Chicken Tikka Masala", "Chicken Rara", "Chicken Lahori", "Chicken Kadai", "Butter Chicken", "Chicken Kolhapuri", "Chicken Manchurian Gravy", "Chicken Masala"] },
+  { icon: Beef, title: "Main Course – Mutton (Premium)", items: ["Mutton Masala", "Mutton Handi"] },
+  { icon: Beef, title: "Extra Dishes (Seasonal)", items: ["Mutton", "Prawns", "Surmai", "Basa / Rawas"] },
+];
+
+const planComparison = [
+  { row: "Welcome Drink / Soup", values: ["Any 2", "Any 2", "Any 2", "Any 2"] },
+  { row: "Veg Starters", values: ["Any 2", "Any 3", "Any 2", "Any 2"] },
+  { row: "Non-Veg Starters", values: ["–", "–", "Any 2", "Any 2"] },
+  { row: "Main Course", values: ["Any 2", "Any 2", "Any 2", "Any 2"] },
+  { row: "Assorted Rotis", values: ["Any 2", "Any 2", "Any 2", "Any 2"] },
+  { row: "Rice / Biryani", values: ["Any 2", "Any 2", "Any 1", "Any 1"] },
+  { row: "Dal", values: ["Any 1", "Any 1", "Any 1", "Any 1"] },
+  { row: "Raita", values: ["Any 1", "Any 1", "Any 1", "Any 1"] },
+  { row: "Salad", values: ["✓", "✓", "Any 1", "Any 1"] },
+  { row: "Ice Cream", values: ["Any 1", "Any 2", "Any 2", "Any 2"] },
+  { row: "Sweet Dish", values: ["Any 1", "Any 2", "Any 1", "Any 1"] },
+  { row: "Fish & Mutton", values: ["✗", "✗", "✗", "✓"] },
+];
+
+function MenuAccordion({ section, defaultOpen = false }: { section: { icon: any; title: string; items: string[] }; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
+  const Icon = section.icon;
+  return (
+    <div
+      className="rounded-xl overflow-hidden"
+      style={{
+        background: "rgba(228,155,29,0.06)",
+        border: "1px solid rgba(228,155,29,0.25)",
+      }}
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-4 py-3 active:scale-[0.99] transition-transform"
+        data-testid={`accordion-${section.title}`}
+      >
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div
+            className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+            style={{ background: "linear-gradient(135deg, #E49B1D, #E6C55A)" }}
+          >
+            <Icon className="w-4 h-4" style={{ color: "#3D3100" }} />
+          </div>
+          <div className="text-left min-w-0">
+            <p
+              className="text-[13px] font-bold uppercase tracking-wider truncate"
+              style={{ color: "var(--bb-gold)", fontFamily: "'DM Sans', sans-serif" }}
+            >
+              {section.title}
+            </p>
+            <p className="text-[10px] tracking-wide" style={{ color: "var(--bb-text)", opacity: 0.5 }}>
+              {section.items.length} items
+            </p>
+          </div>
+        </div>
+        <ChevronDown
+          className="w-4 h-4 flex-shrink-0 transition-transform"
+          style={{
+            color: "var(--bb-gold)",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+          }}
+        />
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            style={{ overflow: "hidden" }}
+          >
+            <div className="px-4 pb-4 pt-1 grid grid-cols-2 gap-2">
+              {section.items.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md"
+                  style={{
+                    background: "rgba(228,155,29,0.08)",
+                    border: "1px solid rgba(228,155,29,0.15)",
+                  }}
+                >
+                  <Sparkles className="w-2.5 h-2.5 flex-shrink-0" style={{ color: "var(--bb-gold)", opacity: 0.7 }} />
+                  <span
+                    className="text-[11px] leading-tight"
+                    style={{ color: "var(--bb-text)" }}
+                  >
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [tab, setTab] = useState<"plans" | "compare" | "veg" | "nonveg" | "hall">("plans");
+
+  const tabs: { id: typeof tab; label: string; icon: any }[] = [
+    { id: "plans", label: "Plans", icon: PartyPopper },
+    { id: "compare", label: "Compare", icon: CheckCircle2 },
+    { id: "veg", label: "Veg", icon: Salad },
+    { id: "nonveg", label: "Non-Veg", icon: Drumstick },
+    { id: "hall", label: "Hall", icon: Users },
+  ];
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="bb-bg fixed inset-0 z-50 flex flex-col"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 40 }}
+          transition={{ type: "spring", damping: 28, stiffness: 300 }}
+          data-testid="modal-party-menu"
+        >
+          {/* Top gold shimmer bar */}
+          <div
+            className="h-[3px] w-full flex-shrink-0"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, #E49B1D, #F0CC60, #E49B1D, transparent)",
+            }}
+          />
+
+          {/* Header */}
+          <div
+            className="flex items-center justify-between px-4 py-3.5 flex-shrink-0"
+            style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
+          >
+            <div className="min-w-0">
+              <p
+                className="text-[10px] uppercase tracking-[0.3em] font-light mb-0.5 flex items-center gap-1.5"
+                style={{ color: "var(--bb-gold)" }}
+              >
+                <Sparkles className="w-2.5 h-2.5" />
+                Join Us For Special Events
+              </p>
+              <h2
+                className="text-2xl font-black leading-none uppercase tracking-widest"
+                style={{
+                  color: "var(--bb-gold)",
+                  fontFamily: "'Cormorant Garamond', serif",
+                  letterSpacing: "0.16em",
+                }}
+              >
+                Celebration Menu
+              </h2>
+            </div>
+
+            <button
+              onClick={onClose}
+              className="w-9 h-9 rounded-full flex items-center justify-center transition-all active:scale-90 flex-shrink-0"
+              style={{
+                background: "rgba(228,155,29,0.12)",
+                border: "1.5px solid rgba(228,155,29,0.45)",
+                color: "var(--bb-gold)",
+              }}
+              data-testid="button-close-party-menu"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Tabs */}
+          <div
+            className="flex-shrink-0 overflow-x-auto"
+            style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
+          >
+            <div className="flex gap-1 px-3 py-2 min-w-max">
+              {tabs.map((t) => {
+                const Icon = t.icon;
+                const active = tab === t.id;
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => setTab(t.id)}
+                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-full transition-all active:scale-95"
+                    style={{
+                      background: active
+                        ? "linear-gradient(135deg, #E49B1D, #E6C55A)"
+                        : "rgba(228,155,29,0.08)",
+                      border: active ? "none" : "1px solid rgba(228,155,29,0.25)",
+                    }}
+                    data-testid={`tab-party-${t.id}`}
+                  >
+                    <Icon
+                      className="w-3.5 h-3.5"
+                      style={{ color: active ? "#3D3100" : "var(--bb-gold)" }}
+                    />
+                    <span
+                      className="text-[11px] font-bold uppercase tracking-wider"
+                      style={{ color: active ? "#3D3100" : "var(--bb-gold)" }}
+                    >
+                      {t.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Scrollable content */}
+          <div className="flex-1 overflow-y-auto px-4 py-4">
+            <AnimatePresence mode="wait">
+              {tab === "plans" && (
+                <motion.div
+                  key="plans"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="space-y-4"
+                >
+                  <p className="text-center text-[12px] tracking-widest uppercase" style={{ color: "var(--bb-gold-2)", opacity: 0.85 }}>
+                    Let's Party · Eat, Drink &amp; Rejoice
+                  </p>
+
+                  {partyPlans.map((plan, idx) => (
+                    <motion.div
+                      key={plan.id}
+                      initial={{ opacity: 0, y: 14 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.06 }}
+                      className="relative rounded-2xl overflow-hidden"
+                      style={{
+                        background: "var(--bb-card)",
+                        border: `1.5px solid ${plan.color}`,
+                        boxShadow: `0 6px 24px ${plan.glow}`,
+                      }}
+                      data-testid={`card-plan-${plan.id}`}
+                    >
+                      {plan.featured && (
+                        <div
+                          className="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest"
+                          style={{
+                            background: "linear-gradient(135deg, #E49B1D, #E6C55A)",
+                            color: "#3D3100",
+                          }}
+                        >
+                          ★ Top Pick
+                        </div>
+                      )}
+
+                      {/* Header band */}
+                      <div
+                        className="px-4 py-3 flex items-end justify-between"
+                        style={{
+                          background: `linear-gradient(135deg, ${plan.color}, ${plan.color}cc)`,
+                        }}
+                      >
+                        <div>
+                          <p
+                            className="text-[10px] uppercase tracking-[0.25em] font-semibold"
+                            style={{ color: "rgba(255,255,255,0.85)" }}
+                          >
+                            {plan.tier}
+                          </p>
+                          <h3
+                            className="text-lg font-black uppercase tracking-wider leading-none mt-0.5"
+                            style={{ color: "#fff", fontFamily: "'DM Sans', sans-serif" }}
+                          >
+                            {plan.name}
+                          </h3>
+                        </div>
+                        <div className="text-right">
+                          <p
+                            className="text-3xl font-black leading-none"
+                            style={{ color: "#fff", fontFamily: "'Cormorant Garamond', serif" }}
+                          >
+                            ₹{plan.price}
+                          </p>
+                          <p className="text-[9px] uppercase tracking-widest mt-0.5" style={{ color: "rgba(255,255,255,0.85)" }}>
+                            per head
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Inclusions */}
+                      <div className="px-4 py-3 space-y-2">
+                        {plan.inclusions.map((inc) => (
+                          <div key={inc} className="flex items-center gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" style={{ color: plan.color }} />
+                            <span className="text-[12px]" style={{ color: "var(--bb-text)" }}>
+                              {inc}
+                            </span>
+                          </div>
+                        ))}
+                        <div
+                          className="mt-2 px-2.5 py-1.5 rounded-md text-[10px] uppercase tracking-wider font-semibold inline-flex items-center gap-1"
+                          style={{
+                            background: "rgba(228,155,29,0.12)",
+                            color: "var(--bb-gold)",
+                            border: "1px solid rgba(228,155,29,0.3)",
+                          }}
+                        >
+                          <Sparkles className="w-3 h-3" />
+                          {plan.note}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+
+                  {/* CTA */}
+                  <a
+                    href="tel:+917738310238"
+                    className="block w-full text-center rounded-xl py-3.5 mt-2 active:scale-[0.98] transition-transform"
+                    style={{
+                      background: "linear-gradient(135deg, #E49B1D, #E6C55A)",
+                      color: "#3D3100",
+                    }}
+                    data-testid="button-book-party"
+                  >
+                    <p className="text-[10px] uppercase tracking-[0.3em] font-semibold opacity-80">
+                      Book Your Celebration
+                    </p>
+                    <p className="text-base font-black tracking-wider flex items-center justify-center gap-2 mt-0.5" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                      <Phone className="w-4 h-4" />
+                      +91 77383 10238
+                    </p>
+                  </a>
+                </motion.div>
+              )}
+
+              {tab === "compare" && (
+                <motion.div
+                  key="compare"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="space-y-3"
+                >
+                  <p className="text-center text-[12px] tracking-widest uppercase mb-2" style={{ color: "var(--bb-gold-2)", opacity: 0.85 }}>
+                    Compare All Plans
+                  </p>
+                  <div
+                    className="rounded-xl overflow-hidden"
+                    style={{
+                      background: "var(--bb-card)",
+                      border: "1px solid rgba(228,155,29,0.3)",
+                    }}
+                  >
+                    {/* Header */}
+                    <div
+                      className="grid grid-cols-5 text-center py-2.5 px-1 gap-1"
+                      style={{ background: "linear-gradient(90deg, #E49B1D, #E6C55A)" }}
+                    >
+                      <div className="text-[9px] uppercase font-black tracking-wider text-left pl-2" style={{ color: "#3D3100" }}>Item</div>
+                      <div className="text-[9px] uppercase font-black tracking-wider" style={{ color: "#3D3100" }}>Veg<br/>₹650</div>
+                      <div className="text-[9px] uppercase font-black tracking-wider" style={{ color: "#3D3100" }}>Veg+<br/>₹750</div>
+                      <div className="text-[9px] uppercase font-black tracking-wider" style={{ color: "#3D3100" }}>NV<br/>₹800</div>
+                      <div className="text-[9px] uppercase font-black tracking-wider" style={{ color: "#3D3100" }}>NV+<br/>₹950</div>
+                    </div>
+                    {planComparison.map((row, idx) => (
+                      <div
+                        key={row.row}
+                        className="grid grid-cols-5 py-2 px-1 gap-1 items-center"
+                        style={{
+                          background: idx % 2 ? "rgba(228,155,29,0.04)" : "transparent",
+                          borderTop: "1px solid rgba(228,155,29,0.1)",
+                        }}
+                      >
+                        <div className="text-[10px] font-semibold pl-2 leading-tight" style={{ color: "var(--bb-text)" }}>{row.row}</div>
+                        {row.values.map((v, i) => (
+                          <div key={i} className="text-[10px] text-center font-medium" style={{ color: v === "✓" ? "#5DA66B" : v === "✗" ? "#C44B3F" : "var(--bb-gold-2)" }}>
+                            {v}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-[10px] text-center mt-2 italic" style={{ color: "var(--bb-text)", opacity: 0.55 }}>
+                    Papad · Pickle · Lemon · Onion included in all plans
+                  </p>
+                </motion.div>
+              )}
+
+              {tab === "veg" && (
+                <motion.div
+                  key="veg"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="space-y-2.5"
+                >
+                  <p className="text-center text-[12px] tracking-widest uppercase mb-2" style={{ color: "var(--bb-gold-2)", opacity: 0.85 }}>
+                    Veg Menu · Item List
+                  </p>
+                  {vegMenuSections.map((s, i) => (
+                    <MenuAccordion key={s.title} section={s} defaultOpen={i === 0} />
+                  ))}
+                </motion.div>
+              )}
+
+              {tab === "nonveg" && (
+                <motion.div
+                  key="nonveg"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="space-y-2.5"
+                >
+                  <p className="text-center text-[12px] tracking-widest uppercase mb-2" style={{ color: "var(--bb-gold-2)", opacity: 0.85 }}>
+                    Non-Veg Menu · Item List
+                  </p>
+                  {nonVegMenuSections.map((s, i) => (
+                    <MenuAccordion key={s.title} section={s} defaultOpen={i === 0} />
+                  ))}
+                  <div
+                    className="mt-3 p-3 rounded-xl text-[11px] leading-relaxed"
+                    style={{
+                      background: "rgba(196,75,63,0.08)",
+                      border: "1px solid rgba(196,75,63,0.35)",
+                      color: "var(--bb-text)",
+                    }}
+                  >
+                    <strong style={{ color: "#E49B1D" }}>Note:</strong> Mutton &amp; Fish are included only in the Non-Veg Premium Plan (₹950/-). Seasonal prices apply for extra dishes.
+                  </div>
+                </motion.div>
+              )}
+
+              {tab === "hall" && (
+                <motion.div
+                  key="hall"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="space-y-4"
+                >
+                  <p className="text-center text-[12px] tracking-widest uppercase" style={{ color: "var(--bb-gold-2)", opacity: 0.85 }}>
+                    Hall &amp; Booking Details
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    {hallDetails.map((d) => {
+                      const Icon = d.icon;
+                      const Wrapper: any = d.href ? "a" : "div";
+                      return (
+                        <Wrapper
+                          key={d.label}
+                          href={d.href}
+                          className="rounded-xl p-3 block active:scale-[0.98] transition-transform"
+                          style={{
+                            background: "var(--bb-card)",
+                            border: "1px solid rgba(228,155,29,0.3)",
+                          }}
+                          data-testid={`card-hall-${d.label}`}
+                        >
+                          <div
+                            className="w-9 h-9 rounded-full flex items-center justify-center mb-2"
+                            style={{ background: "linear-gradient(135deg, #E49B1D, #E6C55A)" }}
+                          >
+                            <Icon className="w-4 h-4" style={{ color: "#3D3100" }} />
+                          </div>
+                          <p className="text-[9px] uppercase tracking-widest font-semibold mb-0.5" style={{ color: "var(--bb-gold)", opacity: 0.8 }}>
+                            {d.label}
+                          </p>
+                          <p className="text-[14px] font-black leading-tight" style={{ color: "var(--bb-text)", fontFamily: "'DM Sans', sans-serif" }}>
+                            {d.value}
+                          </p>
+                          <p className="text-[10px] mt-1 leading-snug" style={{ color: "var(--bb-text)", opacity: 0.55 }}>
+                            {d.sub}
+                          </p>
+                        </Wrapper>
+                      );
+                    })}
+                  </div>
+
+                  {/* Policies */}
+                  <div
+                    className="rounded-xl p-4 space-y-2.5"
+                    style={{
+                      background: "var(--bb-card)",
+                      border: "1px solid rgba(228,155,29,0.3)",
+                    }}
+                  >
+                    <p className="text-[10px] uppercase tracking-[0.25em] font-bold mb-2" style={{ color: "var(--bb-gold)" }}>
+                      Policies
+                    </p>
+                    <div className="flex items-start gap-2">
+                      <XCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#C44B3F" }} />
+                      <span className="text-[12px]" style={{ color: "var(--bb-text)" }}>
+                        Outside food &amp; alcoholic beverages not allowed
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Wine className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "var(--bb-gold)" }} />
+                      <span className="text-[12px]" style={{ color: "var(--bb-text)" }}>
+                        Liquor available · served on premises
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#5DA66B" }} />
+                      <span className="text-[12px]" style={{ color: "var(--bb-text)" }}>
+                        50% advance to confirm · balance 2 days prior
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Extras */}
+                  <div
+                    className="rounded-xl p-4"
+                    style={{
+                      background: "rgba(228,155,29,0.06)",
+                      border: "1px solid rgba(228,155,29,0.25)",
+                    }}
+                  >
+                    <p className="text-[10px] uppercase tracking-[0.25em] font-bold mb-3" style={{ color: "var(--bb-gold)" }}>
+                      Extra Items (Add-on)
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { label: "Juice", price: "+₹50" },
+                        { label: "Syrup Topping", price: "+₹20" },
+                        { label: "Masala Milk / Tea / Coffee", price: "+₹25" },
+                        { label: "Extra Starters / Main", price: "+₹100" },
+                        { label: "Extra Sweet", price: "+₹50" },
+                      ].map((e) => (
+                        <div
+                          key={e.label}
+                          className="flex items-center justify-between px-2.5 py-1.5 rounded-md"
+                          style={{ background: "rgba(228,155,29,0.08)" }}
+                        >
+                          <span className="text-[11px]" style={{ color: "var(--bb-text)" }}>{e.label}</span>
+                          <span className="text-[11px] font-black" style={{ color: "var(--bb-gold)" }}>{e.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Occasions */}
+                  <div className="text-center">
+                    <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-3" style={{ color: "var(--bb-gold)", opacity: 0.85 }}>
+                      Perfect For
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {occasions.map((o) => (
+                        <span
+                          key={o}
+                          className="px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold"
+                          style={{
+                            background: "linear-gradient(135deg, rgba(228,155,29,0.15), rgba(230,197,90,0.15))",
+                            border: "1px solid rgba(228,155,29,0.4)",
+                            color: "var(--bb-gold)",
+                          }}
+                        >
+                          {o}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <a
+                    href="tel:+917738310238"
+                    className="block w-full text-center rounded-xl py-3.5 active:scale-[0.98] transition-transform"
+                    style={{
+                      background: "linear-gradient(135deg, #E49B1D, #E6C55A)",
+                      color: "#3D3100",
+                    }}
+                    data-testid="button-book-hall"
+                  >
+                    <p className="text-base font-black tracking-wider flex items-center justify-center gap-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                      <Phone className="w-4 h-4" />
+                      Call to Book · 77383 10238
+                    </p>
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Bottom gold shimmer bar */}
+          <div
+            className="h-[2px] w-full flex-shrink-0"
+            style={{
+              background: "linear-gradient(90deg, transparent, #E49B1D, transparent)",
+            }}
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function MenuLanding() {
   const [, setLocation] = useLocation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -311,6 +1021,7 @@ export default function MenuLanding() {
   const { t } = useLanguage();
   const { isDark } = useTheme();
   const [showCoupons, setShowCoupons] = useState(false);
+  const [showPartyMenu, setShowPartyMenu] = useState(false);
 
   const { data: coupons = [] } = useQuery<Coupon[]>({
     queryKey: ["/api/coupons"],
@@ -733,12 +1444,60 @@ export default function MenuLanding() {
               );
             })}
         </div>
+
+        {/* Celebration Menu Banner — opens party menu modal */}
+        <motion.button
+          onClick={() => setShowPartyMenu(true)}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.98 }}
+          className="block w-full mt-4 rounded-xl p-[2px] relative overflow-hidden"
+          style={{ background: "linear-gradient(90deg, #E49B1D, #E6C55A, #E49B1D)" }}
+          data-testid="button-celebration-menu"
+        >
+          <div
+            className="rounded-[10px] overflow-hidden relative"
+            style={{ width: "100%", aspectRatio: "1024 / 240", background: "var(--bb-card)" }}
+          >
+            <img
+              src={celebrationMenuBannerImg}
+              alt="Celebration Menu - Join Us For Special Events"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center",
+                display: "block",
+              }}
+            />
+            {/* Tap hint pulse badge */}
+            <div
+              className="absolute top-2 right-2 px-2.5 py-1 rounded-full flex items-center gap-1 backdrop-blur-sm"
+              style={{
+                background: "rgba(0,0,0,0.55)",
+                border: "1px solid rgba(228,155,29,0.6)",
+              }}
+            >
+              <Sparkles className="w-3 h-3" style={{ color: "#E6C55A" }} />
+              <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: "#E6C55A" }}>
+                Tap to View
+              </span>
+            </div>
+          </div>
+        </motion.button>
       </div>
 
       <CouponsFullScreen
         open={showCoupons}
         onClose={() => setShowCoupons(false)}
         coupons={coupons}
+      />
+
+      <PartyMenuFullScreen
+        open={showPartyMenu}
+        onClose={() => setShowPartyMenu(false)}
       />
 
       {/* Image Lightbox */}
