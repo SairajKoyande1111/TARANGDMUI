@@ -47,6 +47,9 @@ import craftedBeerImg from "@assets/CRAFTED_BEER_1766750491358.jpg";
 import fallbackImg from "@assets/coming_soon_imagev2_1766811809828.jpg";
 import drinksOfferBannerImg from "@assets/LIMITED_TIME_OFFER!_VISIT_US_TODAY!_BOOK_YOUR_TABLE_555-0199_w_1776780766076.png";
 import celebrationMenuBannerImg from "@assets/Untitled_design_(13)_1776782517090.png";
+import hallImage1 from "@assets/image_1776788010129.png";
+import hallImage2 from "@assets/image_1776788024450.png";
+import hallImage3 from "@assets/image_1776788050939.png";
 import type { Logo } from "@shared/schema";
 
 
@@ -783,90 +786,113 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="space-y-4"
+                  className="space-y-3"
                 >
-                  <p className="text-center text-[12px] tracking-widest uppercase" style={{ color: "var(--bb-gold-2)", opacity: 0.85 }}>
+                  <p className="text-center text-[12px] tracking-widest uppercase mb-2" style={{ color: "var(--bb-gold-2)", opacity: 0.85 }}>
                     Hall &amp; Booking Details
                   </p>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    {hallDetails.map((d) => {
-                      const Icon = d.icon;
-                      const Wrapper: any = d.href ? "a" : "div";
-                      return (
-                        <Wrapper
-                          key={d.label}
-                          href={d.href}
-                          className="rounded-xl p-3 block active:scale-[0.98] transition-transform"
-                          style={{
-                            background: "var(--bb-card)",
-                            border: "1px solid rgba(228,155,29,0.3)",
-                          }}
-                          data-testid={`card-hall-${d.label}`}
-                        >
-                          <div
-                            className="w-9 h-9 rounded-full flex items-center justify-center mb-2"
-                            style={{ background: "linear-gradient(135deg, #E49B1D, #E6C55A)" }}
-                          >
-                            <Icon className="w-4 h-4" style={{ color: "#3D3100" }} />
-                          </div>
-                          <p className="text-[9px] uppercase tracking-widest font-semibold mb-0.5" style={{ color: "var(--bb-gold)", opacity: 0.8 }}>
-                            {d.label}
-                          </p>
-                          <p className="text-[14px] font-black leading-tight" style={{ color: "var(--bb-text)", fontFamily: "'DM Sans', sans-serif" }}>
-                            {d.value}
-                          </p>
-                          <p className="text-[10px] mt-1 leading-snug" style={{ color: "var(--bb-text)", opacity: 0.55 }}>
-                            {d.sub}
-                          </p>
-                        </Wrapper>
-                      );
-                    })}
-                  </div>
-
-                  {/* Policies */}
+                  {/* Booking details — styled like Veg/Non-Veg section */}
                   <div
-                    className="rounded-xl p-4 space-y-2.5"
-                    style={{
-                      background: "var(--bb-card)",
-                      border: "1px solid rgba(228,155,29,0.3)",
-                    }}
-                  >
-                    <p className="text-[10px] uppercase tracking-[0.25em] font-bold mb-2" style={{ color: "var(--bb-gold)" }}>
-                      Policies
-                    </p>
-                    <div className="flex items-start gap-2">
-                      <XCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#C44B3F" }} />
-                      <span className="text-[12px]" style={{ color: "var(--bb-text)" }}>
-                        Outside food &amp; alcoholic beverages not allowed
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <Wine className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "var(--bb-gold)" }} />
-                      <span className="text-[12px]" style={{ color: "var(--bb-text)" }}>
-                        Liquor available · served on premises
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#5DA66B" }} />
-                      <span className="text-[12px]" style={{ color: "var(--bb-text)" }}>
-                        50% advance to confirm · balance 2 days prior
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Extras */}
-                  <div
-                    className="rounded-xl p-4"
+                    className="rounded-xl overflow-hidden"
                     style={{
                       background: "rgba(228,155,29,0.06)",
                       border: "1px solid rgba(228,155,29,0.25)",
                     }}
                   >
-                    <p className="text-[10px] uppercase tracking-[0.25em] font-bold mb-3" style={{ color: "var(--bb-gold)" }}>
-                      Extra Items (Add-on)
-                    </p>
-                    <div className="grid grid-cols-2 gap-2">
+                    <div
+                      className="w-full px-4 py-3"
+                      style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
+                    >
+                      <p
+                        className="text-[15px] font-bold uppercase tracking-wider"
+                        style={{ color: "var(--bb-gold)", fontFamily: "'DM Sans', sans-serif" }}
+                      >
+                        Booking Info
+                      </p>
+                    </div>
+                    <div className="px-4 py-3 space-y-2">
+                      {[
+                        { label: "Hall Rent", value: "From ₹5,000 (max 5 hrs)" },
+                        { label: "Capacity", value: "40 – 300 guests" },
+                        { label: "Advance", value: "50% · balance 2 days prior" },
+                        { label: "Liquor", value: "Available on premises" },
+                        { label: "Outside Food", value: "Not allowed" },
+                        { label: "Booking", value: "+91 77383 10238" },
+                      ].map((d) => (
+                        <div key={d.label} className="flex items-start justify-between gap-3">
+                          <span className="text-[14px] font-semibold" style={{ color: "var(--bb-gold)" }}>{d.label}</span>
+                          <span className="text-[14px] text-right" style={{ color: "var(--bb-text)" }}>{d.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Hall Gallery — 3 image carousel */}
+                  <div
+                    className="rounded-xl overflow-hidden"
+                    style={{
+                      background: "rgba(228,155,29,0.06)",
+                      border: "1px solid rgba(228,155,29,0.25)",
+                    }}
+                  >
+                    <div
+                      className="w-full px-4 py-3"
+                      style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
+                    >
+                      <p
+                        className="text-[15px] font-bold uppercase tracking-wider"
+                        style={{ color: "var(--bb-gold)", fontFamily: "'DM Sans', sans-serif" }}
+                      >
+                        Hall Gallery
+                      </p>
+                    </div>
+                    <div className="p-3">
+                      <div
+                        className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1"
+                        style={{ scrollbarWidth: "none" }}
+                        data-testid="carousel-hall-gallery"
+                      >
+                        {[hallImage1, hallImage2, hallImage3].map((img, i) => (
+                          <div
+                            key={i}
+                            className="flex-shrink-0 snap-center rounded-lg overflow-hidden"
+                            style={{ width: "85%", aspectRatio: "16 / 10" }}
+                          >
+                            <img
+                              src={img}
+                              alt={`Tarang Hall ${i + 1}`}
+                              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Extra Items — styled like Veg/Non-Veg section */}
+                  <div
+                    className="rounded-xl overflow-hidden"
+                    style={{
+                      background: "rgba(228,155,29,0.06)",
+                      border: "1px solid rgba(228,155,29,0.25)",
+                    }}
+                  >
+                    <div
+                      className="w-full flex items-center justify-between px-4 py-3"
+                      style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
+                    >
+                      <p
+                        className="text-[15px] font-bold uppercase tracking-wider"
+                        style={{ color: "var(--bb-gold)", fontFamily: "'DM Sans', sans-serif" }}
+                      >
+                        Extra Items
+                      </p>
+                      <span className="text-[12px] font-semibold" style={{ color: "var(--bb-gold)", opacity: 0.75 }}>
+                        add-on
+                      </span>
+                    </div>
+                    <div className="px-4 py-3 space-y-2">
                       {[
                         { label: "Juice", price: "+₹50" },
                         { label: "Syrup Topping", price: "+₹20" },
@@ -874,34 +900,36 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
                         { label: "Extra Starters / Main", price: "+₹100" },
                         { label: "Extra Sweet", price: "+₹50" },
                       ].map((e) => (
-                        <div
-                          key={e.label}
-                          className="flex items-center justify-between px-2.5 py-1.5 rounded-md"
-                          style={{ background: "rgba(228,155,29,0.08)" }}
-                        >
-                          <span className="text-[11px]" style={{ color: "var(--bb-text)" }}>{e.label}</span>
-                          <span className="text-[11px] font-black" style={{ color: "var(--bb-gold)" }}>{e.price}</span>
+                        <div key={e.label} className="flex items-center justify-between gap-3">
+                          <span className="text-[14px]" style={{ color: "var(--bb-text)" }}>{e.label}</span>
+                          <span className="text-[14px] font-bold" style={{ color: "var(--bb-gold)" }}>{e.price}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Occasions */}
-                  <div className="text-center">
-                    <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-3" style={{ color: "var(--bb-gold)", opacity: 0.85 }}>
-                      Perfect For
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-2">
+                  {/* Occasions — styled like Veg/Non-Veg section */}
+                  <div
+                    className="rounded-xl overflow-hidden"
+                    style={{
+                      background: "rgba(228,155,29,0.06)",
+                      border: "1px solid rgba(228,155,29,0.25)",
+                    }}
+                  >
+                    <div
+                      className="w-full px-4 py-3"
+                      style={{ borderBottom: "1px solid rgba(228,155,29,0.18)" }}
+                    >
+                      <p
+                        className="text-[15px] font-bold uppercase tracking-wider"
+                        style={{ color: "var(--bb-gold)", fontFamily: "'DM Sans', sans-serif" }}
+                      >
+                        Perfect For
+                      </p>
+                    </div>
+                    <div className="px-4 py-3 grid grid-cols-2 gap-x-3 gap-y-2">
                       {occasions.map((o) => (
-                        <span
-                          key={o}
-                          className="px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold"
-                          style={{
-                            background: "linear-gradient(135deg, rgba(228,155,29,0.15), rgba(230,197,90,0.15))",
-                            border: "1px solid rgba(228,155,29,0.4)",
-                            color: "var(--bb-gold)",
-                          }}
-                        >
+                        <span key={o} className="text-[14px] leading-snug" style={{ color: "var(--bb-text)" }}>
                           {o}
                         </span>
                       ))}
@@ -918,9 +946,8 @@ function PartyMenuFullScreen({ open, onClose }: { open: boolean; onClose: () => 
                     }}
                     data-testid="button-book-hall"
                   >
-                    <p className="text-base font-black tracking-wider flex items-center justify-center gap-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                      <Phone className="w-4 h-4" />
-                      Call to Book · 77383 10238
+                    <p className="text-base font-black tracking-wider" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                      Call to Book · +91 77383 10238
                     </p>
                   </a>
                 </motion.div>
