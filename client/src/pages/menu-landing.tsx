@@ -26,6 +26,7 @@ import premiumMocktailsImg from "@assets/stock_images/premium_colorful_moc_1a15d
 import cocktailsImg from "@assets/COCKTAILS_1766751289781.jpg";
 import craftedBeerImg from "@assets/CRAFTED_BEER_1766750491358.jpg";
 import fallbackImg from "@assets/coming_soon_imagev2_1766811809828.jpg";
+import drinksOfferBannerImg from "@assets/LIMITED_TIME_OFFER!_VISIT_US_TODAY!_BOOK_YOUR_TABLE_555-0199_w_1776780415408.png";
 import type { Logo } from "@shared/schema";
 
 
@@ -315,9 +316,9 @@ export default function MenuLanding() {
     queryKey: ["/api/coupons"],
   });
 
-  const { data: carouselImages = [] } = useQuery<CarouselImage[]>({
-    queryKey: ["/api/carousel"],
-  });
+  const carouselImages: CarouselImage[] = [
+    { _id: "drinks-offer-banner", url: drinksOfferBannerImg, order: 1, visible: true } as CarouselImage,
+  ];
 
   const { data: menuCategories = [] } = useQuery<MenuCategory[]>({
     queryKey: ["/api/menu-categories"],
