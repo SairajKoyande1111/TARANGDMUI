@@ -116,6 +116,15 @@ import craftBeerOnTapImg from "@assets/Craftbeerontap_1766834179093.png";
 import draughtBeerImg from "@assets/Draught_beer-min_1766834686357.png";
 import beerCocktailImg from "@assets/beer_cocktail_1768238826587.jpg";
 import wineImg from "@assets/image_1768239070678.png";
+
+import khanePeeneImg from "@assets/image_1776748663858.png";
+import continentalVegImg from "@assets/image_1776748745623.png";
+import continentalNonVegImg from "@assets/image_1776748813278.png";
+import pastaNewImg from "@assets/image_1776750646640.png";
+import pizzaNewImg from "@assets/image_1776750693771.png";
+import tandoorVegImg from "@assets/image_1776750775671.png";
+import tandoorNonVegImg from "@assets/image_1776750952941.png";
+import orientalStarterNonVegImg from "@assets/image_1776751007687.png";
 import dessertImg from "@assets/DESSERT_1771583946302.jpg";
 
 const subcategoryImages: Record<string, string> = {
@@ -177,7 +186,16 @@ const subcategoryImages: Record<string, string> = {
   "classic-shots": signatureShotsImg,
   "beer-cocktail": beerCocktailImg,
   desserts: dessertImg,
+  "khane-peene": khanePeeneImg,
+  "continental-veg": continentalVegImg,
+  "continental-non-veg": continentalNonVegImg,
+  "tandoor-veg": tandoorVegImg,
+  "tandoor-non-veg": tandoorNonVegImg,
+  "oriental-starter-non-veg": orientalStarterNonVegImg,
 };
+
+subcategoryImages.pasta = pastaNewImg;
+subcategoryImages.pizza = pizzaNewImg;
 
 export default function CategorySelection() {
   const [, setLocation] = useLocation();
