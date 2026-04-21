@@ -22,6 +22,8 @@ const NAME_IMAGE_OVERRIDES: { match: (n: string) => boolean; image: string }[] =
   { match: (n) => n.includes("cream") && n.includes("tomato"), image: soupTomatoCreamImg },
   { match: (n) => n.includes("mushroom") && n.includes("tomato"), image: soupMushroomCreamImg },
   { match: (n) => n.includes("tomato") && n.includes("soup"), image: soupTomatoBowlImg },
+  { match: (n) => n.includes("tamatar") || n.includes("shorbha") || n.includes("shorba"), image: soupTomatoBowlImg },
+  { match: (n) => n.includes("tom") && n.includes("yum"), image: soupClearImg },
   { match: (n) => n.includes("clear") && n.includes("soup"), image: soupClearImg },
 ];
 
