@@ -125,6 +125,18 @@ import pizzaNewImg from "@assets/image_1776750693771.png";
 import tandoorVegImg from "@assets/image_1776750775671.png";
 import tandoorNonVegImg from "@assets/image_1776750952941.png";
 import orientalStarterNonVegImg from "@assets/image_1776751007687.png";
+import saladRaitaImg from "@assets/image_1776752436882.png";
+import dessertsNewImg from "@assets/image_1776752566455.png";
+import basmatiImg from "@assets/image_1776752661151.png";
+import dalsNewImg from "@assets/image_1776752707773.png";
+import orientalCurriesImg from "@assets/image_1776752871724.png";
+import friedRiceNoodlesImg from "@assets/image_1776752946394.png";
+import agriStyleImg from "@assets/image_1776753039521.png";
+import rotisNewImg from "@assets/image_1776757042346.png";
+import murgEKhaasImg from "@assets/image_1776757099680.png";
+import goshtEKhaasImg from "@assets/image_1776757268424.png";
+import jalpariSpecialImg from "@assets/image_1776758250780.png";
+import sabziTarkariImg from "@assets/image_1776758310412.png";
 import dessertImg from "@assets/DESSERT_1771583946302.jpg";
 
 const subcategoryImages: Record<string, string> = {
@@ -196,6 +208,18 @@ const subcategoryImages: Record<string, string> = {
 
 subcategoryImages.pasta = pastaNewImg;
 subcategoryImages.pizza = pizzaNewImg;
+subcategoryImages["salad-raita"] = saladRaitaImg;
+subcategoryImages.desserts = dessertsNewImg;
+subcategoryImages["basmati-ki-khushbu"] = basmatiImg;
+subcategoryImages.dals = dalsNewImg;
+subcategoryImages["oriental-curries"] = orientalCurriesImg;
+subcategoryImages["fried-rice-noodles"] = friedRiceNoodlesImg;
+subcategoryImages["agri-style"] = agriStyleImg;
+subcategoryImages.rotis = rotisNewImg;
+subcategoryImages["murg-e-khaas"] = murgEKhaasImg;
+subcategoryImages["gosht-e-khaas"] = goshtEKhaasImg;
+subcategoryImages["jalpari-special"] = jalpariSpecialImg;
+subcategoryImages["sabzi-tarkari"] = sabziTarkariImg;
 
 export default function CategorySelection() {
   const [, setLocation] = useLocation();
