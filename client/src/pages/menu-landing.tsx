@@ -56,6 +56,9 @@ import soupHotSourImg from "@assets/image_1776791407057.png";
 import soupLemonCorianderImg from "@assets/image_1776791332518.png";
 import soupClearImg from "@assets/image_1776792098937.png";
 import soupTomatoImg from "@assets/image_1776792056827.png";
+import greenSaladImg from "@assets/image_1776870046198.png";
+import pineappleRaitaImg from "@assets/image_1776870249377.png";
+import fruitRaitaImg from "@assets/image_1776870284118.png";
 import type { Logo } from "@shared/schema";
 
 
@@ -428,7 +431,13 @@ const vegMenuSections = [
   { icon: Wheat, title: "Indian Rice", items: ["Veg Pulao", "Veg Biryani", "Steam Rice / Jeera Rice", "Curd Rice", "Green Peas Pulao", "Veg Hyderabadi Biryani"] },
   { icon: Wheat, title: "Chinese Rice / Noodles", items: ["Fried Rice", "Hakka Noodles", "Singapore Fried Rice", "Singapore Noodles", "Hongkong Fried Rice", "Hongkong Noodles", "Schezwan Fried Rice"] },
   { icon: Soup, title: "Dal / Kadi", items: ["Dal Fry", "Dal Tadka", "Dal Makhni", "Kolhapuri Dal", "Palak Punjabi", "Dahi Kadi"] },
-  { icon: Salad, title: "Raita / Salad", items: ["Veg Raita", "Boondi Raita", "Pineapple Raita", "Fruit Raita", "Green Salad"] },
+  { icon: Salad, title: "Raita / Salad", items: [
+    "Veg Raita",
+    "Boondi Raita",
+    { name: "Pineapple Raita", image: pineappleRaitaImg },
+    { name: "Fruit Raita", image: fruitRaitaImg },
+    { name: "Green Salad", image: greenSaladImg },
+  ] },
   { icon: IceCream2, title: "Ice Cream Flavours", items: ["Vanilla", "Chocolate", "Strawberry", "Mango", "Butter Scotch"] },
   { icon: Cookie, title: "Sweet Dish", items: ["Gulab Jamun"] },
 ];
