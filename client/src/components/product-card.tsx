@@ -77,13 +77,12 @@ export default function ProductCard({ item, onClick }: ProductCardProps) {
         borderRadius: "10px",
         backgroundColor: "var(--bb-card)",
         border: "1px solid var(--bb-border)",
-        aspectRatio: "1 / 1.55",
       }}
       onClick={() => onClick?.(item)}
       data-testid={`card-dish-${item._id?.toString()}`}
     >
-      {/* Image — 60% of card height */}
-      <div className="relative w-full overflow-hidden" style={{ borderRadius: "10px 10px 0 0", flex: "0 0 60%" }}>
+      {/* Image — square */}
+      <div className="relative w-full overflow-hidden" style={{ borderRadius: "10px 10px 0 0", aspectRatio: "1 / 1" }}>
         <img
           src={imageUrl}
           alt={item.name}
