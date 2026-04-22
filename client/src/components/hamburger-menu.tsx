@@ -492,7 +492,7 @@ export default function HamburgerMenu({
                     const payeeName = "Sairaj Koyande";
                     const upiQuery = `pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(payeeName)}&cu=INR`;
                     const apps: { label: string; scheme: string; logo: string; scale: number }[] = [
-                      { label: "GPay", scheme: `tez://upi/pay?${upiQuery}`, logo: gpayLogo, scale: 1 },
+                      { label: "GPay", scheme: `tez://upi/pay?${upiQuery}`, logo: gpayLogo, scale: 1.25 },
                       { label: "PhonePe", scheme: `phonepe://pay?${upiQuery}`, logo: phonepeLogo, scale: 2 },
                       { label: "Paytm", scheme: `paytmmp://pay?${upiQuery}`, logo: paytmLogo, scale: 1.4 },
                     ];
