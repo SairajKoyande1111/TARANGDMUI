@@ -50,7 +50,18 @@ import chickenPopcornImg from "@assets/image_1776844943200.png";
 import fishChipsImg from "@assets/image_1776844967962.png";
 import chickenTacosImg from "@assets/image_1776844982108.png";
 
+import alfredoImg from "@assets/image_1776845316210.png";
+import arabiataImg from "@assets/image_1776845337542.png";
+import lasagnaImg from "@assets/image_1776845396133.png";
+import macCheeseImg from "@assets/image_1776845428956.png";
+import paprikaImg from "@assets/image_1776845477195.png";
+
 const NAME_IMAGE_OVERRIDES: { match: (n: string) => boolean; image: string }[] = [
+  { match: (n) => n.includes("alfredo"), image: alfredoImg },
+  { match: (n) => n.includes("arabiata") || n.includes("arrabiata"), image: arabiataImg },
+  { match: (n) => n.includes("lasagna") || n.includes("lasagne"), image: lasagnaImg },
+  { match: (n) => n.includes("mac") && n.includes("cheese"), image: macCheeseImg },
+  { match: (n) => n.includes("paprika"), image: paprikaImg },
   { match: (n) => n.includes("chicken") && n.includes("nacho"), image: chickenNachosImg },
   { match: (n) => n.includes("chicken") && n.includes("popcorn"), image: chickenPopcornImg },
   { match: (n) => n.includes("fish") && (n.includes("chips") || n.includes("finger")), image: fishChipsImg },
