@@ -26,7 +26,21 @@ import dessertIceCreamImg from "@assets/image_1776837853758.png";
 import dessertGulabJamunImg from "@assets/image_1776837905531.png";
 import dessertSizzlingBrownieImg from "@assets/image_1776837922629.png";
 
+import bhajiyaImg from "@assets/image_1776839581786.png";
+import butterCornImg from "@assets/image_1776839719203.png";
+import kheechaPapadImg from "@assets/image_1776843231024.png";
+import papadFryImg from "@assets/image_1776843288193.png";
+import masalaPapadImg from "@assets/image_1776843309315.png";
+import saltedPeanutImg from "@assets/image_1776843326947.png";
+
 const NAME_IMAGE_OVERRIDES: { match: (n: string) => boolean; image: string }[] = [
+  { match: (n) => n.includes("bhajiya") || n.includes("pakoda") || n.includes("pakora"), image: bhajiyaImg },
+  { match: (n) => n.includes("butter corn") || n.includes("boiled chana"), image: butterCornImg },
+  { match: (n) => n.includes("masala") && n.includes("kheecha"), image: kheechaPapadImg },
+  { match: (n) => n.includes("kheecha"), image: kheechaPapadImg },
+  { match: (n) => n.includes("masala") && n.includes("papad"), image: masalaPapadImg },
+  { match: (n) => n.includes("papad"), image: papadFryImg },
+  { match: (n) => n.includes("salted peanut") || n.includes("peanut"), image: saltedPeanutImg },
   { match: (n) => n.includes("ice cream") && n.includes("choice"), image: dessertIceCreamImg },
   { match: (n) => n.includes("gulab") && n.includes("jamun"), image: dessertGulabJamunImg },
   { match: (n) => n.includes("sizzling") && n.includes("brownie"), image: dessertSizzlingBrownieImg },
