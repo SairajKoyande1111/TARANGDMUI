@@ -507,23 +507,56 @@ export default function HamburgerMenu({
                     )}
                   </AnimatePresence>
 
-                  <button
-                    onClick={() => {
-                      const payeeName = restaurantInfo?.location?.name || "Barrelborn";
-                      const upiUrl = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(payeeName)}&cu=INR`;
-                      window.location.href = upiUrl;
-                    }}
-                    disabled={!upiId}
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold tracking-widest uppercase transition-all active:scale-95 disabled:opacity-50"
-                    style={{
-                      background: "linear-gradient(90deg, #E49B1D, #E6C55A)",
-                      color: "#1C1500",
-                      fontFamily: "'DM Sans', sans-serif",
-                    }}
-                    data-testid="button-pay-now"
-                  >
-                    Pay Now
-                  </button>
+                  {(() => {
+                    const payeeName = restaurantInfo?.location?.name || "Barrelborn";
+                    const upiQuery = `pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(payeeName)}&cu=INR`;
+                    const apps: { label: string; scheme: string; color: string }[] = [
+                      { label: "GPay", scheme: `tez://upi/pay?${upiQuery}`, color: "#1A73E8" },
+                      { label: "PhonePe", scheme: `phonepe://pay?${upiQuery}`, color: "#5F259F" },
+                      { label: "Paytm", scheme: `paytmmp://pay?${upiQuery}`, color: "#00BAF2" },
+                    ];
+                    const openApp = (url: string) => {
+                      window.location.href = url;
+                    };
+                    return (
+                      <div className="space-y-2 pt-1">
+                        <p className="text-[10px] tracking-widest uppercase text-center" style={{ color: "rgba(228,155,29,0.6)", fontFamily: "'DM Sans', sans-serif" }}>
+                          Pay With
+                        </p>
+                        <div className="grid grid-cols-3 gap-2">
+                          {apps.map((app) => (
+                            <button
+                              key={app.label}
+                              onClick={() => openApp(app.scheme)}
+                              disabled={!upiId}
+                              className="py-2.5 rounded-xl text-xs font-bold tracking-wide transition-all active:scale-95 disabled:opacity-50"
+                              style={{
+                                background: app.color,
+                                color: "#FFFFFF",
+                                fontFamily: "'DM Sans', sans-serif",
+                              }}
+                              data-testid={`button-pay-${app.label.toLowerCase()}`}
+                            >
+                              {app.label}
+                            </button>
+                          ))}
+                        </div>
+                        <button
+                          onClick={() => openApp(`upi://pay?${upiQuery}`)}
+                          disabled={!upiId}
+                          className="w-full py-2.5 rounded-xl text-xs font-bold tracking-widest uppercase transition-all active:scale-95 disabled:opacity-50"
+                          style={{
+                            background: "linear-gradient(90deg, #E49B1D, #E6C55A)",
+                            color: "#1C1500",
+                            fontFamily: "'DM Sans', sans-serif",
+                          }}
+                          data-testid="button-pay-other"
+                        >
+                          Other UPI App
+                        </button>
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
 
