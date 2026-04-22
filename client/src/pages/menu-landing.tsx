@@ -59,6 +59,10 @@ import soupTomatoImg from "@assets/image_1776792056827.png";
 import greenSaladImg from "@assets/image_1776870046198.png";
 import pineappleRaitaImg from "@assets/image_1776870249377.png";
 import fruitRaitaImg from "@assets/image_1776870284118.png";
+import dalFryImg from "@assets/image_1776870316131.png";
+import kolhapuriDalImg from "@assets/image_1776870439686.png";
+import palakPunjabiImg from "@assets/image_1776870455707.png";
+import dalTadkaImg from "@assets/image_1776870474331.png";
 import type { Logo } from "@shared/schema";
 
 
@@ -430,7 +434,14 @@ const vegMenuSections = [
   { icon: Wheat, title: "Rotis", items: ["Roti", "Naan", "Kulcha"] },
   { icon: Wheat, title: "Indian Rice", items: ["Veg Pulao", "Veg Biryani", "Steam Rice / Jeera Rice", "Curd Rice", "Green Peas Pulao", "Veg Hyderabadi Biryani"] },
   { icon: Wheat, title: "Chinese Rice / Noodles", items: ["Fried Rice", "Hakka Noodles", "Singapore Fried Rice", "Singapore Noodles", "Hongkong Fried Rice", "Hongkong Noodles", "Schezwan Fried Rice"] },
-  { icon: Soup, title: "Dal / Kadi", items: ["Dal Fry", "Dal Tadka", "Dal Makhni", "Kolhapuri Dal", "Palak Punjabi", "Dahi Kadi"] },
+  { icon: Soup, title: "Dal / Kadi", items: [
+    { name: "Dal Fry", image: dalFryImg },
+    { name: "Dal Tadka", image: dalTadkaImg },
+    "Dal Makhni",
+    { name: "Kolhapuri Dal", image: kolhapuriDalImg },
+    { name: "Palak Punjabi", image: palakPunjabiImg },
+    "Dahi Kadi",
+  ] },
   { icon: Salad, title: "Raita / Salad", items: [
     "Veg Raita",
     "Boondi Raita",
