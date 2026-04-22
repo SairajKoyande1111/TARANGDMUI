@@ -332,7 +332,7 @@ export default function HamburgerMenu({
     queryKey: ["/api/social-links"],
   });
 
-  const upiId = paymentDetails?.upiId ?? "";
+  const upiId = paymentDetails?.upiId ?? "sairajkoyande@oksbi";
 
   const resolveLink = (linkKey?: string): string | undefined => {
     if (!linkKey || !socialLinks) return undefined;
@@ -507,14 +507,23 @@ export default function HamburgerMenu({
                     )}
                   </AnimatePresence>
 
-                  <div className="flex items-center gap-2 pt-1">
-                    {["GPay", "PhonePe", "Paytm", "BHIM"].map((app) => (
-                      <div key={app} className="flex-1 text-center py-1.5 rounded-lg text-[10px] font-semibold"
-                        style={{ background: isDark ? "rgba(228,155,29,0.06)" : "#FFFFFF", border: isDark ? "1px solid rgba(228,155,29,0.15)" : "1px solid rgba(0,0,0,0.1)", color: isDark ? "rgba(220,212,200,0.5)" : "rgba(0,0,0,0.45)", fontFamily: "'DM Sans', sans-serif" }}>
-                        {app}
-                      </div>
-                    ))}
-                  </div>
+                  <button
+                    onClick={() => {
+                      const payeeName = restaurantInfo?.location?.name || "Barrelborn";
+                      const upiUrl = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(payeeName)}&cu=INR`;
+                      window.location.href = upiUrl;
+                    }}
+                    disabled={!upiId}
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold tracking-widest uppercase transition-all active:scale-95 disabled:opacity-50"
+                    style={{
+                      background: "linear-gradient(90deg, #E49B1D, #E6C55A)",
+                      color: "#1C1500",
+                      fontFamily: "'DM Sans', sans-serif",
+                    }}
+                    data-testid="button-pay-now"
+                  >
+                    Pay Now
+                  </button>
                 </div>
               </div>
 
