@@ -305,8 +305,11 @@ export default function CategorySelection() {
   }, [allMenuItems, foodSearchQuery, categoryId, vegFilter]);
 
   const filteredSubcategories = useMemo(() => {
+    if (categoryId === "food") {
+      return subcategories.filter((s) => s.id !== "desserts");
+    }
     return subcategories;
-  }, [subcategories]);
+  }, [subcategories, categoryId]);
 
   useEffect(() => {
     if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
