@@ -11,7 +11,28 @@ import soupTomatoCreamImg from "@assets/image_1776792056827.png";
 import soupTomatoBowlImg from "@assets/image_1776791355739.png";
 import soupMushroomCreamImg from "@assets/image_1776791265999.png";
 
+import mocktailBloodOrangeImg from "@assets/image_1776833599330.png";
+import mocktailCherryBombImg from "@assets/image_1776833653883.png";
+import mocktailCocoDelightImg from "@assets/image_1776833705934.png";
+import mocktailGrapeRickeyImg from "@assets/image_1776833773881.png";
+import mocktailKiwiDaiquiriImg from "@assets/image_1776833800599.png";
+import mocktailPassionFruitImg from "@assets/image_1776833845254.png";
+import mocktailSpicyGuavaImg from "@assets/image_1776833896892.png";
+import mocktailVirginMojitoImg from "@assets/image_1776833965352.png";
+import mocktailVirginPinacoladaImg from "@assets/image_1776833999860.png";
+import mocktailWinterPunchImg from "@assets/image_1776834027249.png";
+
 const NAME_IMAGE_OVERRIDES: { match: (n: string) => boolean; image: string }[] = [
+  { match: (n) => n.includes("blood") && n.includes("orange"), image: mocktailBloodOrangeImg },
+  { match: (n) => n.includes("cherry") && n.includes("bomb"), image: mocktailCherryBombImg },
+  { match: (n) => n.includes("coco") && n.includes("delight"), image: mocktailCocoDelightImg },
+  { match: (n) => n.includes("grape") && n.includes("rickey"), image: mocktailGrapeRickeyImg },
+  { match: (n) => n.includes("kiwi") && n.includes("daiquiri"), image: mocktailKiwiDaiquiriImg },
+  { match: (n) => n.includes("passion") && n.includes("fruit"), image: mocktailPassionFruitImg },
+  { match: (n) => n.includes("spicy") && n.includes("guava"), image: mocktailSpicyGuavaImg },
+  { match: (n) => n.includes("virgin") && n.includes("mojito"), image: mocktailVirginMojitoImg },
+  { match: (n) => n.includes("virgin") && (n.includes("pinacolada") || n.includes("pina colada") || n.includes("piña colada")), image: mocktailVirginPinacoladaImg },
+  { match: (n) => n.includes("winter") && n.includes("punch"), image: mocktailWinterPunchImg },
   { match: (n) => n.includes("manchow"), image: soupManchowImg },
   { match: (n) => n.includes("sweet") && n.includes("corn"), image: soupSweetcornImg },
   { match: (n) => n.includes("hot") && n.includes("sour"), image: soupHotSourImg },
