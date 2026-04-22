@@ -504,24 +504,20 @@ export default function HamburgerMenu({
                         <p className="text-[10px] tracking-widest uppercase text-center" style={{ color: "rgba(228,155,29,0.6)", fontFamily: "'DM Sans', sans-serif" }}>
                           Pay With
                         </p>
-                        <div className="grid grid-cols-3 gap-2">
+                        <div className="grid grid-cols-3 gap-3 items-center">
                           {apps.map((app) => (
                             <button
                               key={app.label}
                               onClick={() => openApp(app.scheme)}
                               disabled={!upiId}
-                              className="h-14 rounded-xl flex items-center justify-center transition-all active:scale-95 disabled:opacity-50 overflow-hidden"
-                              style={{
-                                background: "#FFFFFF",
-                                border: "1px solid rgba(0,0,0,0.08)",
-                              }}
+                              className="h-16 flex items-center justify-center transition-all active:scale-95 disabled:opacity-50 bg-transparent border-0 p-0"
                               data-testid={`button-pay-${app.label.toLowerCase()}`}
                               aria-label={`Pay with ${app.label}`}
                             >
                               <img
                                 src={app.logo}
                                 alt={app.label}
-                                className="max-h-10 max-w-[80%] object-contain"
+                                className="h-14 w-auto max-w-full object-contain"
                               />
                             </button>
                           ))}
