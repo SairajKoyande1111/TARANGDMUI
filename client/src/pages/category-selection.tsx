@@ -267,6 +267,12 @@ export default function CategorySelection() {
   }, [categoryId, foodSearchQuery]);
 
   useEffect(() => {
+    if (categoryId === "mocktails" && subcategories.length > 0) {
+      setLocation(`/menu/mocktails/${subcategories[0].id}`, { replace: true });
+    }
+  }, [categoryId, subcategories, setLocation]);
+
+  useEffect(() => {
     try {
       localStorage.setItem("foodVegFilter", vegFilter);
     } catch {
