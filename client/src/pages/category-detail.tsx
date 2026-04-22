@@ -11,6 +11,7 @@ import panAnimation from "@assets/Animaed_pan_1773736045253.json";
 import DishCard from "@/components/dish-card";
 import FloatingButtons from "@/components/floating-buttons";
 import { getMainCategory, getSubcategoryIds } from "@/lib/menu-categories";
+import { useTheme } from "@/contexts/ThemeContext";
 import type { MenuItem } from "@shared/schema";
 
 import nibblesImg from "@assets/image_1765861653339.png";
@@ -127,6 +128,10 @@ export default function CategoryDetail() {
   const [, setLocation] = useLocation();
   const params = useParams<{ category: string }>();
   const categoryId = params.category || "food";
+  const { isDark } = useTheme();
+  const pageBg = isDark ? "#000000" : "#FFFFFF";
+  const subBgInactive = isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.04)";
+  const labelInactive = isDark ? "#DCD4C8" : "#5A3E00";
 
   const mainCategory = getMainCategory(categoryId);
   const subcategories = mainCategory?.subcategories || [];
@@ -215,15 +220,15 @@ export default function CategoryDetail() {
 
   if (!mainCategory) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#3D3100" }}>
-        <p style={{ color: "#DCD4C8" }}>Category not found</p>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: pageBg }}>
+        <p style={{ color: isDark ? "#DCD4C8" : "#1a1a1a" }}>Category not found</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#3D3100" }}>
-      <header className="sticky top-0 z-30 elegant-shadow" style={{ backgroundColor: "#3D3100" }}>
+    <div className="min-h-screen" style={{ backgroundColor: pageBg }}>
+      <header className="sticky top-0 z-30 elegant-shadow" style={{ backgroundColor: pageBg }}>
         <div className="container mx-auto px-2 sm:px-4 py-3 sm:py-4">
           <div className="flex items-center justify-between gap-2">
             <Button
@@ -310,7 +315,7 @@ export default function CategoryDetail() {
                 }}
                 className="flex-shrink-0 flex flex-col items-center p-2 rounded-xl transition-all duration-200 min-w-[80px]"
                 style={{
-                  backgroundColor: activeSubcategory === subcat.id ? "rgba(228,155,29,0.2)" : "rgba(255,255,255,0.05)",
+                  backgroundColor: activeSubcategory === subcat.id ? "rgba(228,155,29,0.2)" : subBgInactive,
                   border: activeSubcategory === subcat.id ? "2px solid #E49B1D" : "2px solid rgba(228,155,29,0.2)",
                 }}
                 data-testid={`subcategory-${subcat.id}`}

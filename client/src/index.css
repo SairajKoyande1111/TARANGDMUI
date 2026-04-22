@@ -271,10 +271,32 @@
   --bb-input-text:#1a1a1a;
 }
 
+[data-theme="dark"] {
+  --bb-bg:        #000000;
+  --bb-card:      #0a0a0a;
+  --bb-card-alt:  #111111;
+  --bb-gold:      #E49B1D;
+  --bb-gold-2:    #C4722A;
+  --bb-text:      #DCD4C8;
+  --bb-text-dim:  rgba(220,212,200,0.55);
+  --bb-border:    rgba(228,155,29,0.25);
+  --bb-header:    #000000;
+  --bb-search-bg: rgba(255,255,255,0.06);
+  --bb-search-br: rgba(228,155,29,0.3);
+  --bb-input-text:#E8D8B4;
+}
+
 [data-theme="light"],
 [data-theme="light"] body,
 [data-theme="light"] #root {
   background-color: #FFFFFF;
+  background-image: none;
+}
+
+[data-theme="dark"],
+[data-theme="dark"] body,
+[data-theme="dark"] #root {
+  background-color: #000000;
   background-image: none;
 }
 
@@ -288,6 +310,11 @@
 [data-theme="light"] .bb-bg {
   background-image: none;
   background-color: #FFFFFF;
+}
+
+[data-theme="dark"] .bb-bg {
+  background-image: none;
+  background-color: #000000;
 }
 
 /* Welcome page — button (same style in both themes) */
