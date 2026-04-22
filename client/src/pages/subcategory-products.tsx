@@ -216,7 +216,7 @@ export default function SubcategoryProducts() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setLocation(`/menu/${categoryId}`)}
+              onClick={() => setLocation(categoryId === "mocktails" ? "/menu" : `/menu/${categoryId}`)}
               className="hover:bg-transparent flex-shrink-0"
               style={{ color: "#C9A55C" }}
               data-testid="button-back"
