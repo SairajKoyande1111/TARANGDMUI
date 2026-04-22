@@ -491,10 +491,10 @@ export default function HamburgerMenu({
                   {(() => {
                     const payeeName = "Sairaj Koyande";
                     const upiQuery = `pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(payeeName)}&cu=INR`;
-                    const apps: { label: string; scheme: string; logo: string }[] = [
-                      { label: "GPay", scheme: `tez://upi/pay?${upiQuery}`, logo: gpayLogo },
-                      { label: "PhonePe", scheme: `phonepe://pay?${upiQuery}`, logo: phonepeLogo },
-                      { label: "Paytm", scheme: `paytmmp://pay?${upiQuery}`, logo: paytmLogo },
+                    const apps: { label: string; scheme: string; logo: string; scale: number }[] = [
+                      { label: "GPay", scheme: `tez://upi/pay?${upiQuery}`, logo: gpayLogo, scale: 1 },
+                      { label: "PhonePe", scheme: `phonepe://pay?${upiQuery}`, logo: phonepeLogo, scale: 2 },
+                      { label: "Paytm", scheme: `paytmmp://pay?${upiQuery}`, logo: paytmLogo, scale: 1.4 },
                     ];
                     const openApp = (url: string) => {
                       window.location.href = url;
@@ -517,7 +517,8 @@ export default function HamburgerMenu({
                               <img
                                 src={app.logo}
                                 alt={app.label}
-                                className="h-14 w-auto max-w-full object-contain"
+                                className="w-auto object-contain"
+                                style={{ height: `${app.scale * 56}px`, maxWidth: "150%" }}
                               />
                             </button>
                           ))}
