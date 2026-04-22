@@ -408,6 +408,7 @@ export default function SubcategoryProducts() {
                 lineHeight: 1.4,
               }}
             >
+              <span style={{ opacity: 0.7, marginRight: 6 }}>Note:</span>
               {categoryAddon}
             </span>
           </div>
